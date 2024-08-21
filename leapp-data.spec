@@ -15,7 +15,7 @@ BuildArch:  noarch
 
 BuildRequires: bc
 BuildRequires: python3
-BuildRequires: python3-jsonschema
+BuildRequires: python36-jsonschema
 
 Conflicts: %{conflict_dists}
 
