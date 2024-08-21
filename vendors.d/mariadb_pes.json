@@ -3,14 +3,13 @@
     "packageinfo": [
         {
             "action": 3,
-            "architectures": [
+            "arches": [
                 "x86_64",
                 "aarch64",
-                "ppc64le",
-		"s390x"
+                "ppc64le"
             ],
             "description": "",
-            "id": 12691,
+            "id": 9523,
             "in_packageset": {
                 "package": [
                     {
@@ -19,7 +18,7 @@
                         "repository": "mariadb-tools"
                     }
                 ],
-                "set_id": 29743
+                "set_id": 12037
             },
             "initial_release": {
                 "major_version": 7,
@@ -31,11 +30,11 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "MariaDB-backup",
-                        "repository": "all-mariadb-main"
+                        "name": "percona-xtrabackup-24",
+                        "repository": "el8-mariadb-tools"
                     }
                 ],
-                "set_id": 29744
+                "set_id": 12038
             },
             "release": {
                 "major_version": 8,
@@ -44,9 +43,6 @@
             },
             "version": 1
         }
-    ],
-    "provided_data_streams": [
-        "2.0"
     ],
     "timestamp": "202308241055Z"
 }

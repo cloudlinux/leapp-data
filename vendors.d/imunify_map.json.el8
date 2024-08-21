@@ -11,6 +11,10 @@
                     "target": ["cloudlinux8-imunify360"]
                 },
                 {
+                    "source": "imunify360-current",
+                    "target": ["cloudlinux8-imunify360"]
+                },
+                {
                     "source": "cloudlinux-imunify360",
                     "target": ["cloudlinux8-imunify360"]
                 },
@@ -31,6 +35,18 @@
             "entries": [
                 {
                     "repoid": "imunify360",
+                    "major_version": "7",
+                    "repo_type": "rpm",
+                    "arch": "x86_64",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "imunify360-current",
+            "entries": [
+                {
+                    "repoid": "imunify360-current",
                     "major_version": "7",
                     "repo_type": "rpm",
                     "arch": "x86_64",
