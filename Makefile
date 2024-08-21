@@ -54,3 +54,27 @@ vendors:
 	done
 
 	find $(LEAPP_BUILD_DIR) -name '*.el?' -delete
+
+test:
+	$(eval JSON_FILES := $(shell find $(buildroot) -path "./tests" -prune -o -name "*pes*.json*" -print0 | xargs -0 echo))
+
+	python3 tests/validate_json.py tests/pes-events-schema.json $(JSON_FILES)
+	python3 tests/validate_ids.py $(JSON_FILES)
+
+	# todo: disabled temporary
+	# python3 tests/check_debranding.py $(buildroot)$(_sysconfdir)/leapp/files/pes-events.json
+
+install:
+	cp -ar $(buildroot)/* $(PREFIX)
+
+clean:
+	rm -rf $(buildroot)
+
+rpm:
+	echo "Add your files to index before running this command"
+	# see details here https://docs.oracle.com/en/operating-systems/oracle-linux/6/porting/ch10s01s03.html
+	git ls-files -z | xargs -0 tar \
+		-czvf ~/rpmbuild/SOURCES/$(shell rpm -q --queryformat="leapp-data-%{version}.tar.gz\n" --specfile leapp-data.spec) \
+		--transform 's,^,$(shell rpm -q -D "dist_name cloudlinux" --queryformat="%{NAME}-%{VERSION}\n" --specfile leapp-data.spec)/,'
+
+	rpmbuild -bb -D "dist_name cloudlinux" leapp-data.spec
