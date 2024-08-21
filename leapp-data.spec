@@ -1,15 +1,21 @@
+%global pes_events_build_date 20240821
+
 %define dist_list almalinux centos eurolinux oraclelinux rocky cloudlinux
 %define conflict_dists() %(for i in almalinux centos eurolinux oraclelinux rocky cloudlinux; do if [ "${i}" != "%{dist_name}" ]; then echo -n "leapp-data-${i} "; fi; done)
 
 Name:		leapp-data-%{dist_name}
 Version:	0.2
-Release:	9%{?dist}.cloudlinux
+Release:	15%{?dist}.%{pes_events_build_date}
 Summary:	data for migrating tool
 Group:		Applications/Databases
 License:	ASL 2.0
 URL:		https://github.com/AlmaLinux/leapp-data
 Source0:	leapp-data-%{version}.tar.gz
 BuildArch:  noarch
+
+BuildRequires: bc
+BuildRequires: python3
+BuildRequires: python3-jsonschema
 
 Conflicts: %{conflict_dists}
 
@@ -20,38 +26,29 @@ Conflicts: %{conflict_dists}
 %prep
 %setup -q
 
-
 %build
-
+make all && make test
 
 %install
-mkdir -p %{buildroot}%{_sysconfdir}/leapp/files/vendors.d
-%if 0%{?rhel} < 8
-cp -f vendors.d/* %{buildroot}%{_sysconfdir}/leapp/files/vendors.d/
-%endif
-cp -rf files/%{dist_name}/* %{buildroot}%{_sysconfdir}/leapp/files/
-
-%if 0%{?rhel} == 7
-mv -f %{buildroot}%{_sysconfdir}/leapp/files/leapp_upgrade_repositories.repo.el8 \
-      %{buildroot}%{_sysconfdir}/leapp/files/leapp_upgrade_repositories.repo
-mv -f %{buildroot}%{_sysconfdir}/leapp/files/repomap.json.el8 \
-      %{buildroot}%{_sysconfdir}/leapp/files/repomap.json
-rm -f %{buildroot}%{_sysconfdir}/leapp/files/*.el9
-%endif
-%if 0%{?rhel} == 8
-mv -f %{buildroot}%{_sysconfdir}/leapp/files/leapp_upgrade_repositories.repo.el9 \
-      %{buildroot}%{_sysconfdir}/leapp/files/leapp_upgrade_repositories.repo
-mv -f %{buildroot}%{_sysconfdir}/leapp/files/repomap.json.el9 \
-      %{buildroot}%{_sysconfdir}/leapp/files/repomap.json
-rm -f %{buildroot}%{_sysconfdir}/leapp/files/*.el8
-%endif
+make install PREFIX=%{buildroot}
 
 %files
 %doc LICENSE NOTICE README.md
+%if 0%{?rhel} == 8
+%{_sysconfdir}/leapp/repos.d/system_upgrade/common/files/rpm-gpg/9/
+%endif
+
+%if 0%{?rhel} == 7
+%{_sysconfdir}/leapp/repos.d/system_upgrade/common/files/rpm-gpg/8/
+%endif
 %{_sysconfdir}/leapp/files/*
 
 
+
 %changelog
+* Wed Aug 21 2024 Oleksandr Shyshatskyi <oshyshatskyi@cloudlinux.com> - 0.3-0.cloudlinux
+- Rebase onto AlmaLinux
+
 * Thu Jun 13 2024 Roman Prilipskii <rprilpskii@cloudlinux.com> - 0.2-9.cloudlinux
 - Make EA4 repository optional
 

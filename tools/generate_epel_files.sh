@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 if [ $# -eq 0 ]; then
     echo "No arguments provided"
     exit 1
@@ -7,6 +9,7 @@ fi
 
 dist_name=$1
 major_ver=$2
+root_dir="${3-$(pwd)}"
 
 declare -A os_repos
 os_repos["almalinux7"]="almalinux8-appstream almalinux8-powertools"
@@ -30,9 +33,9 @@ os_name["rocky"]="Rocky"
 
 
 if [[ $major_ver -eq 7 ]]; then
-    epel_map_file="vendors.d/epel_map.json_template.el8"
+    epel_map_file="${root_dir}/vendors.d/epel_map.json_template.el8"
 elif [[ $major_ver -eq 8 ]]; then
-    epel_map_file="vendors.d/epel_map.json_template.el9"
+    epel_map_file="${root_dir}/vendors.d/epel_map.json_template.el9"
 else
     echo "Unknown OS version"
     exit 1
@@ -43,10 +46,10 @@ if [ -n "${os_repos[$dist_name$major_ver]}" ]; then
     sed -i "s/{appstream}/${REPO[0]}/g" ${epel_map_file}
     sed -i "s/{powertools}/${REPO[1]}/g" ${epel_map_file}
     sed -i "s/{baseos}/${REPO[2]}/g" ${epel_map_file}
-    sed -i "s/{os_name}/${os_name[$dist_name]}/g" vendors.d/epel_pes.json_template
+    sed -i "s/{os_name}/${os_name[$dist_name]}/g" ${root_dir}/vendors.d/epel_pes.json_template
 
-    mv vendors.d/epel_pes.json_template vendors.d/epel_pes.json
-    mv ${epel_map_file} vendors.d/epel_map.json
+    mv ${root_dir}/vendors.d/epel_pes.json_template ${root_dir}/vendors.d/epel_pes.json
+    mv ${epel_map_file} ${root_dir}/vendors.d/epel_map.json
 else
     echo "Unknown OS name"
     exit 1
