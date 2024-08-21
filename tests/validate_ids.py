@@ -58,6 +58,7 @@ def main():
     if duplicate_set_ids:
         print(f"Found duplicate set_ids across files with different package names: {duplicate_set_ids}")
         print("Change set_id to any other unique identifier to keep it unique")
+        print("Alternatively, run `python3.11 rebuild_ids.py` to rebuild the whole index ")
         failed = True
     else:
         print("No duplicate set_ids found across files, or duplicates have the same package names.")
