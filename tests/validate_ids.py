@@ -35,7 +35,7 @@ def find_duplicates_in_files(files):
     filtered_duplicate_set_ids = []
     for set_id in duplicate_set_ids:
         if len(set_id_package_names[set_id]) > 1:
-            filtered_duplicate_set_ids.append(set_id)
+            filtered_duplicate_set_ids.append(set_id_package_names[set_id])
 
     return duplicate_ids, filtered_duplicate_set_ids
 
@@ -57,6 +57,7 @@ def main():
 
     if duplicate_set_ids:
         print(f"Found duplicate set_ids across files with different package names: {duplicate_set_ids}")
+        print("Change set_id to any other unique identifier to keep it unique")
         failed = True
     else:
         print("No duplicate set_ids found across files, or duplicates have the same package names.")

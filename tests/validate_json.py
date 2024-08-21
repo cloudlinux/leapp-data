@@ -33,7 +33,8 @@ def main():
                 if valid:
                     print("JSON is valid according to the schema.")
                 else:
-                    print(f"JSON is invalid. Error: {error}")
+                    print(f"JSON {file} is invalid.")
+                    print(f"Validation error: {error.message}")
                     failed = True
             except json.JSONDecodeError as err:
                 print(f"Invalid JSON: {err}")
