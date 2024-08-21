@@ -3,7 +3,7 @@
     "packageinfo": [
         {
             "action": 3,
-            "arches": [
+            "architectures": [
                 "x86_64",
                 "aarch64",
                 "ppc64le"
@@ -43,6 +43,9 @@
             },
             "version": 1
         }
+    ],
+    "provided_data_streams": [
+        "2.0"
     ],
     "timestamp": "202308241055Z"
 }
