@@ -89,6 +89,8 @@ class PesIdRebuilder():
                     in_packageset["set_id"] = 0
             if "out_packageset" in item:
                 out_packageset = item["out_packageset"]
+                if out_packageset is None:
+                    continue
                 if "package" in out_packageset and out_packageset["package"]:
                     out_packageset["set_id"] = self.set_id
                     self.set_id += 1
