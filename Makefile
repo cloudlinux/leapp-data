@@ -2,7 +2,7 @@
 DIST_NAME ?= cloudlinux
 DIST_VERSION ?= 7
 DIST_TARGET_VERSION := $(shell echo ${DIST_VERSION}+1 | bc)
-GPG_KEY ?= RPM-GPG-KEY-CloudLinux
+GPG_KEY ?= RPM-GPG-KEY-CloudLinux RPM-GPG-KEY-AlmaLinux-$(DIST_TARGET_VERSION)
 VENDORS = epel imunify kernelcare mariadb nginx-stable nginx-mainline postgresql
 
 # Installation prefix
