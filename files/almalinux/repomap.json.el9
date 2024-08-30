@@ -1,6 +1,9 @@
 {
     "datetime": "202204020934Z",
-    "version_format": "1.0.0",
+    "version_format": "1.2.0",
+    "provided_data_streams": [
+        "3.0"
+    ],
     "mapping": [
         {
             "source_major_version": "8",
@@ -40,6 +43,30 @@
                     "source": "extras",
                     "target": [
                         "almalinux9-extras"
+                    ]
+                },
+                {
+                    "source": "rt",
+                    "target": [
+                        "almalinux9-rt"
+                    ]
+                },
+                {
+                    "source": "nfv",
+                    "target": [
+                        "almalinux9-nfv"
+                    ]
+                },
+                {
+                    "source": "sap",
+                    "target": [
+                        "almalinux9-sap"
+                    ]
+                },
+                {
+                    "source": "saphana",
+                    "target": [
+                        "almalinux9-saphana"
                     ]
                 }
             ]
@@ -119,6 +146,54 @@
             ]
         },
         {
+            "pesid": "rt",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repo_type": "rpm",
+                    "repoid": "rt",
+                    "arch": "x86_64",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "nfv",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repo_type": "rpm",
+                    "repoid": "nfv",
+                    "arch": "x86_64",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "sap",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repo_type": "rpm",
+                    "repoid": "sap",
+                    "arch": "x86_64",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "saphana",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repo_type": "rpm",
+                    "repoid": "saphana",
+                    "arch": "x86_64",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
             "pesid": "almalinux9-baseos",
             "entries": [
                 {
@@ -185,6 +260,54 @@
                     "major_version": "9",
                     "repo_type": "rpm",
                     "repoid": "almalinux9-extras",
+                    "arch": "x86_64",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "almalinux9-rt",
+            "entries": [
+                {
+                    "major_version": "9",
+                    "repo_type": "rpm",
+                    "repoid": "almalinux9-rt",
+                    "arch": "x86_64",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "almalinux9-nfv",
+            "entries": [
+                {
+                    "major_version": "9",
+                    "repo_type": "rpm",
+                    "repoid": "almalinux9-nfv",
+                    "arch": "x86_64",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "almalinux9-sap",
+            "entries": [
+                {
+                    "major_version": "9",
+                    "repo_type": "rpm",
+                    "repoid": "almalinux9-sap",
+                    "arch": "x86_64",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "almalinux9-saphana",
+            "entries": [
+                {
+                    "major_version": "9",
+                    "repo_type": "rpm",
+                    "repoid": "almalinux9-saphana",
                     "arch": "x86_64",
                     "channel": "ga"
                 }

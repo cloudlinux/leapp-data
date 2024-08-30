@@ -1,6 +1,9 @@
 {
     "datetime": "202204020934Z",
-    "version_format": "1.0.0",
+    "version_format": "1.2.0",
+    "provided_data_streams": [
+        "3.0"
+    ],
     "mapping": [
         {
             "source_major_version": "7",
@@ -13,7 +16,8 @@
                         "rocky8-appstream",
                         "rocky8-powertools",
                         "rocky8-ha",
-                        "rocky8-resilient-storage"
+                        "rocky8-resilient-storage",
+                        "rocky8-nfv"
                     ]
                 },
                 {
@@ -23,7 +27,8 @@
                         "rocky8-appstream",
                         "rocky8-powertools",
                         "rocky8-ha",
-                        "rocky8-resilient-storage"
+                        "rocky8-resilient-storage",
+                        "rocky8-nfv"
                     ]
                 },
                 {
@@ -141,6 +146,30 @@
                     "repo_type": "rpm",
                     "arch": "x86_64",
                     "repoid": "rocky8-extras"
+                }
+            ]
+        },
+        {
+            "pesid": "rocky8-rt",
+            "entries": [
+                {
+                    "channel": "ga",
+                    "major_version": "8",
+                    "repo_type": "rpm",
+                    "arch": "x86_64",
+                    "repoid": "rocky8-rt"
+                }
+            ]
+        },
+        {
+            "pesid": "rocky8-nfv",
+            "entries": [
+                {
+                    "channel": "ga",
+                    "major_version": "8",
+                    "repo_type": "rpm",
+                    "arch": "x86_64",
+                    "repoid": "rocky8-nfv"
                 }
             ]
         }
