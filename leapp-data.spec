@@ -5,7 +5,7 @@
 
 Name:		leapp-data-%{dist_name}
 Version:	0.3
-Release:	1%{?dist}.%{pes_events_build_date}
+Release:	2%{?dist}.%{pes_events_build_date}
 Summary:	data for migrating tool
 Group:		Applications/Databases
 License:	ASL 2.0
