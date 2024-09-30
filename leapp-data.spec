@@ -47,7 +47,8 @@ make install PREFIX=%{buildroot}
 
 %changelog
 * Thu Sep 26 2024 Yuriy Kohut <ykohut@almalinux.org> - 0.3-3.cloudlinux
- - Move GeoIP package if epel vendor is enabled
+- Move GeoIP package if epel vendor is enabled
+- Pack gpg keys inside the package to avoid "Detected unknown GPG keys" error (CLOS-2946)
 
 * Wed Aug 21 2024 Oleksandr Shyshatskyi <oshyshatskyi@cloudlinux.com> - 0.3-0.cloudlinux
 - Rebase onto AlmaLinux
