@@ -3,5 +3,5 @@ name=nginx stable repo
 baseurl=http://nginx.org/packages/centos/9/$basearch/
 gpgcheck=1
 enabled=0
-gpgkey=https://nginx.org/keys/nginx_signing.key
+gpgkey=file:///etc/leapp/files/vendors.d/rpm-gpg/nginx_signing.gpg
 module_hotfixes=true
