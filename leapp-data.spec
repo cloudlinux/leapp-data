@@ -33,7 +33,7 @@ Conflicts: %{conflict_dists}
 %setup -q
 
 %build
-make DIST_VERSION=0%{?rhel} all && make test
+make DIST_VERSION=%{?rhel} all && make test
 
 %install
 make install PREFIX=%{buildroot}
