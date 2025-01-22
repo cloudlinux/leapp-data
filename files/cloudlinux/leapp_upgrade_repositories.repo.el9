@@ -91,9 +91,10 @@ enabled=0
 gpgcheck=1
 gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
 
-[cloudlinux9-elevate]
-name=CloudLinux 9 ELevate
-baseurl=https://repo.cloudlinux.com/elevate/9/$basearch/
-gpgcheck=1
-enabled=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
+# todo: is it needed at all?
+# [cloudlinux9-elevate]
+# name=CloudLinux 9 ELevate
+# baseurl=https://repo.cloudlinux.com/elevate/9/$basearch/
+# gpgcheck=1
+# enabled=1
+# gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
