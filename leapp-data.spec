@@ -15,7 +15,13 @@ BuildArch:  noarch
 
 BuildRequires: bc
 BuildRequires: python3
+
+%if 0%{?rhel} == 7
 BuildRequires: python36-jsonschema
+%endif
+%if 0%{?rhel} == 8
+BuildRequires: python3-jsonschema
+%endif
 
 Conflicts: %{conflict_dists}
 
@@ -27,7 +33,7 @@ Conflicts: %{conflict_dists}
 %setup -q
 
 %build
-make all && make test
+make DIST_VERSION=%{?rhel} all && make test
 
 %install
 make install PREFIX=%{buildroot}

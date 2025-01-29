@@ -1,0 +1,100 @@
+# AlmaLinux repositories.
+
+[almalinux9-baseos]
+name=AlmaLinux 9 - BaseOS
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/9/baseos
+# baseurl=https://vault.almalinux.org/9/BaseOS/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/9/RPM-GPG-KEY-AlmaLinux-9
+
+[almalinux9-appstream]
+name=AlmaLinux 9 - AppStream
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/9/appstream
+# baseurl=https://vault.almalinux.org/9/AppStream/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/9/RPM-GPG-KEY-AlmaLinux-9
+
+[almalinux9-crb]
+name=AlmaLinux 9 - CRB
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/9/crb
+# baseurl=https://vault.almalinux.org/9/CRB/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/9/RPM-GPG-KEY-AlmaLinux-9
+
+[almalinux9-highavailability]
+name=AlmaLinux 9 - HighAvailability
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/9/ha
+# baseurl=https://vault.almalinux.org/9/HighAvailability/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/9/RPM-GPG-KEY-AlmaLinux-9
+
+[almalinux9-resilientstorage]
+name=AlmaLinux 9 - ResilientStorage
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/9/resilientstorage
+# baseurl=https://vault.almalinux.org/9/ResilientStorage/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/9/RPM-GPG-KEY-AlmaLinux-9
+
+[almalinux9-extras]
+name=AlmaLinux 9 - Extras
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/9/extras
+# baseurl=https://vault.almalinux.org/9/extras/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/9/RPM-GPG-KEY-AlmaLinux-9
+
+[almalinux9-sap]
+name=AlmaLinux 9 - SAP
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/9/sap
+# baseurl=https://repo.almalinux.org/almalinux/9/SAP/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/9/RPM-GPG-KEY-AlmaLinux-9
+
+[almalinux9-saphana]
+name=AlmaLinux 9 - SAPHANA
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/9/saphana
+# baseurl=https://repo.almalinux.org/almalinux/9/SAPHANA/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/9/RPM-GPG-KEY-AlmaLinux-9
+
+[almalinux9-rt]
+name=AlmaLinux 9 - RT
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/9/rt
+# baseurl=https://repo.almalinux.org/almalinux/9/RT/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/9/RPM-GPG-KEY-AlmaLinux-9
+
+[almalinux9-nfv]
+name=AlmaLinux 9 - NFV
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/9/nfv
+# baseurl=https://repo.almalinux.org/almalinux/9/NFV/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/9/RPM-GPG-KEY-AlmaLinux-9
+
+# CL repositories used during migration.
+
+[cloudlinux9-baseos]
+name=CloudLinux 9 - BaseOS
+baseurl=https://repo.cloudlinux.com/cloudlinux/9/BaseOS/$basearch/os/
+# keep cloudlinux9-baseos here because we need repository to install rhn-client-tools
+# but at the same time we don't want to use it during migration because we have CLN channel
+enabled=0
+gpgcheck=1
+gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
+
+# todo: is it needed at all?
+# [cloudlinux9-elevate]
+# name=CloudLinux 9 ELevate
+# baseurl=https://repo.cloudlinux.com/elevate/9/$basearch/
+# gpgcheck=1
+# enabled=1
+# gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
