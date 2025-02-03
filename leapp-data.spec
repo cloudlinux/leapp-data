@@ -5,7 +5,7 @@
 
 Name:		leapp-data-%{dist_name}
 Version:	0.3
-Release:	3%{?dist}.%{pes_events_build_date}
+Release:	4%{?dist}.%{pes_events_build_date}
 Summary:	data for migrating tool
 Group:		Applications/Databases
 License:	ASL 2.0
@@ -52,6 +52,9 @@ make install PREFIX=%{buildroot}
 
 
 %changelog
+* Mon Feb 3 2025 Oleksandr Shyshatskyi <oshyshatskyi@cloudlinux.com> - 0.3-4.cloudlinux
+- CLOS-3187: Adding CloudLinux 8 to CloudLinux 9 upgrade support
+
 * Thu Sep 26 2024 Yuriy Kohut <ykohut@almalinux.org> - 0.3-3.cloudlinux
 - Move GeoIP package if epel vendor is enabled
 - Pack gpg keys inside the package to avoid "Detected unknown GPG keys" error (CLOS-2946)
