@@ -1,0 +1,37 @@
+{
+    "datetime": "202306191746Z",
+    "version_format": "1.2.0",
+    "mapping": [
+        {
+            "source_major_version": "8",
+            "target_major_version": "9",
+            "entries": [
+                {
+                    "source": "alt-common",
+                    "target": [
+                        "el9-alt-common"
+                    ]
+                }
+            ]
+        }
+    ],
+    "repositories": [
+        {
+            "pesid": "alt-common",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "el9-alt-common",
+                    "arch": "x86_64",
+                    "channel": "ga",
+                    "repo_type": "rpm"
+                }
+            ]
+        }
+    ],
+    "provided_data_streams": [
+        "1.1",
+        "2.0",
+        "3.0"
+    ]
+}
