@@ -1,4 +1,4 @@
-[el8-alt-common]
+[el9-alt-common]
 name = alt common Extended Lifecycle Support by TuxCare
 baseurl = https://repo.alt.tuxcare.com/alt-common/rpm/el/9/stable/$basearch/
 enabled=1

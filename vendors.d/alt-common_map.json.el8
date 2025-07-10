@@ -3,13 +3,13 @@
     "version_format": "1.2.0",
     "mapping": [
         {
-            "source_major_version": "8",
-            "target_major_version": "9",
+            "source_major_version": "7",
+            "target_major_version": "8",
             "entries": [
                 {
                     "source": "alt-common",
                     "target": [
-                        "el9-alt-common"
+                        "el8-alt-common"
                     ]
                 }
             ]
@@ -20,14 +20,26 @@
             "pesid": "alt-common",
             "entries": [
                 {
-                    "major_version": "8",
-                    "repoid": "el9-alt-common",
+                    "major_version": "7",
+                    "repoid": "alt-common",
                     "arch": "x86_64",
                     "channel": "ga",
                     "repo_type": "rpm"
                 }
             ]
-        }
+        },
+        {
+            "pesid": "el8-alt-common",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "el8-alt-common",
+                    "arch": "x86_64",
+                    "channel": "ga",
+                    "repo_type": "rpm"
+                }
+            ]
+        },
     ],
     "provided_data_streams": [
         "1.1",
