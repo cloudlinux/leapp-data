@@ -68,6 +68,8 @@ vendors:
 
 	find $(LEAPP_BUILD_DIR) -name '*.el?' -delete
 
+	find $(VENDORS_DIR) -name '*.json' | xargs -n 1 python3 tools/repomap_check.py
+
 test:
 	$(eval JSON_FILES := $(shell find $(buildroot) -path "./tests" -prune -o -name "*pes*.json*" -print0 | xargs -0 echo))
 
