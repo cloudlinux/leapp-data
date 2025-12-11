@@ -5,7 +5,7 @@
 
 Name:		leapp-data-%{dist_name}
 Version:	0.3
-Release:	8%{?dist}.%{pes_events_build_date}
+Release:	9%{?dist}.%{pes_events_build_date}
 Summary:	data for migrating tool
 Group:		Applications/Databases
 License:	ASL 2.0
@@ -52,6 +52,9 @@ make install PREFIX=%{buildroot}
 
 
 %changelog
+
+* Mon Dec 09 2024 - 0.3-9.cloudlinux
+- CLOS-3347: Fix mysqlclient packages not upgraded from el7 to el8 during elevation - add pes-events rules for mysqlclient15, mysqlclient16, and mysqlclient18
 
 * Sun Aug 17 2025 Oleksandr Shyshatskyi <oshyshatskyi@cloudlinux.com> - 0.3-8.cloudlinux
 - CLOS-3468: Keep python3-pyOpenSSL during updates
