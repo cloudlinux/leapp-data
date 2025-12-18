@@ -1,0 +1,261 @@
+{
+    "legal_notice": "",
+    "packageinfo": [
+        {
+            "action": 1,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 12948,
+            "in_packageset": {
+                "package": [
+                    {
+                        "modulestreams": [
+                            null
+                        ],
+                        "name": "mysqlclient15",
+                        "repository": "mysqclient"
+                    }
+                ],
+                "set_id": 16842
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 7,
+                "os_name": "CloudLinux"
+            },
+            "modulestream_maps": [],
+            "out_packageset": {
+                "package": [
+                    {
+                        "modulestreams": [
+                            null
+                        ],
+                        "name": "mysqlclient15",
+                        "repository": "mysqclient-8"
+                    }
+                ],
+                "set_id": 16843
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CloudLinux"
+            }
+        },
+        {
+            "action": 1,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 12949,
+            "in_packageset": {
+                "package": [
+                    {
+                        "modulestreams": [
+                            null
+                        ],
+                        "name": "mysqlclient16",
+                        "repository": "mysqclient"
+                    }
+                ],
+                "set_id": 16844
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 7,
+                "os_name": "CloudLinux"
+            },
+            "modulestream_maps": [],
+            "out_packageset": {
+                "package": [
+                    {
+                        "modulestreams": [
+                            null
+                        ],
+                        "name": "mysqlclient16",
+                        "repository": "mysqclient-8"
+                    }
+                ],
+                "set_id": 16845
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CloudLinux"
+            }
+        },
+        {
+            "action": 1,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 12950,
+            "in_packageset": {
+                "package": [
+                    {
+                        "modulestreams": [
+                            null
+                        ],
+                        "name": "mysqlclient18",
+                        "repository": "mysqclient"
+                    }
+                ],
+                "set_id": 16846
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 7,
+                "os_name": "CloudLinux"
+            },
+            "modulestream_maps": [],
+            "out_packageset": {
+                "package": [
+                    {
+                        "modulestreams": [
+                            null
+                        ],
+                        "name": "mysqlclient18",
+                        "repository": "mysqclient-8"
+                    }
+                ],
+                "set_id": 16847
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CloudLinux"
+            }
+        },
+        {
+            "action": 1,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 12951,
+            "in_packageset": {
+                "package": [
+                    {
+                        "modulestreams": [
+                            null
+                        ],
+                        "name": "mysqlclient21",
+                        "repository": "mysqclient"
+                    }
+                ],
+                "set_id": 16848
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 7,
+                "os_name": "CloudLinux"
+            },
+            "modulestream_maps": [],
+            "out_packageset": {
+                "package": [
+                    {
+                        "modulestreams": [
+                            null
+                        ],
+                        "name": "mysqlclient21",
+                        "repository": "mysqclient-8"
+                    }
+                ],
+                "set_id": 16849
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CloudLinux"
+            }
+        },
+        {
+            "action": 1,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 12952,
+            "in_packageset": {
+                "package": [
+                    {
+                        "modulestreams": [
+                            null
+                        ],
+                        "name": "mysqlclient18",
+                        "repository": "mysqclient"
+                    }
+                ],
+                "set_id": 16850
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CloudLinux"
+            },
+            "modulestream_maps": [],
+            "out_packageset": {
+                "package": [
+                    {
+                        "modulestreams": [
+                            null
+                        ],
+                        "name": "mysqlclient18",
+                        "repository": "mysqclient-9"
+                    }
+                ],
+                "set_id": 16851
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "CloudLinux"
+            }
+        },
+        {
+            "action": 1,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 12953,
+            "in_packageset": {
+                "package": [
+                    {
+                        "modulestreams": [
+                            null
+                        ],
+                        "name": "mysqlclient21",
+                        "repository": "mysqclient"
+                    }
+                ],
+                "set_id": 16852
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CloudLinux"
+            },
+            "modulestream_maps": [],
+            "out_packageset": {
+                "package": [
+                    {
+                        "modulestreams": [
+                            null
+                        ],
+                        "name": "mysqlclient21",
+                        "repository": "mysqclient-9"
+                    }
+                ],
+                "set_id": 16853
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "CloudLinux"
+            }
+        }
+    ],
+    "provided_data_streams": [
+        "2.0",
+        "3.0"
+    ]
+}
