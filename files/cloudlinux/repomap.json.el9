@@ -68,6 +68,40 @@
                     "target": [
                         "almalinux9-saphana"
                     ]
+                },
+                {
+                    "source": "cl-channel",
+                    "target": [
+                        "cloudlinux9-channel",
+                        "cloudlinux9-baseos",
+                        "cloudlinux9-appstream"
+                    ]
+                },
+                {
+                    "source": "cloudlinux8-baseos",
+                    "target": [
+                        "cloudlinux9-channel",
+                        "cloudlinux9-baseos"
+                    ]
+                },
+                {
+                    "source": "cloudlinux8-appstream",
+                    "target": [
+                        "cloudlinux9-channel",
+                        "cloudlinux9-appstream"
+                    ]
+                },
+                {
+                    "source": "cloudlinux8-powertools",
+                    "target": [
+                        "cloudlinux9-channel"
+                    ]
+                },
+                {
+                    "source": "cloudlinux8-elevate",
+                    "target": [
+                        "cloudlinux9-channel"
+                    ]
                 }
             ]
         }
@@ -308,6 +342,102 @@
                     "major_version": "9",
                     "repo_type": "rpm",
                     "repoid": "almalinux9-saphana",
+                    "arch": "x86_64",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "cl-channel",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repo_type": "rpm",
+                    "repoid": "cl-channel",
+                    "arch": "x86_64",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "cloudlinux8-baseos",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repo_type": "rpm",
+                    "repoid": "cloudlinux8-baseos",
+                    "arch": "x86_64",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "cloudlinux8-appstream",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repo_type": "rpm",
+                    "repoid": "cloudlinux8-appstream",
+                    "arch": "x86_64",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "cloudlinux8-powertools",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repo_type": "rpm",
+                    "repoid": "cloudlinux8-powertools",
+                    "arch": "x86_64",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "cloudlinux8-elevate",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repo_type": "rpm",
+                    "repoid": "cloudlinux8-elevate",
+                    "arch": "x86_64",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "cloudlinux9-baseos",
+            "entries": [
+                {
+                    "major_version": "9",
+                    "repo_type": "rpm",
+                    "repoid": "cloudlinux9-baseos",
+                    "arch": "x86_64",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "cloudlinux9-appstream",
+            "entries": [
+                {
+                    "major_version": "9",
+                    "repo_type": "rpm",
+                    "repoid": "cloudlinux9-appstream",
+                    "arch": "x86_64",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "cloudlinux9-channel",
+            "entries": [
+                {
+                    "major_version": "9",
+                    "repo_type": "rpm",
+                    "repoid": "cl-channel",
                     "arch": "x86_64",
                     "channel": "ga"
                 }

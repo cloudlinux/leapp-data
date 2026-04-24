@@ -81,20 +81,32 @@ gpgcheck=1
 gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/9/RPM-GPG-KEY-AlmaLinux-9
 
 # CL repositories used during migration.
+# Enabled so CloudLinux-specific packages (cagefs, alt-php*, lve-utils, etc.)
+# are available when the source system is on the no-auth (SWNG) scheme and
+# CLN is no longer serving them.
 
+# cl-channel is the primary CL9 no-auth repo (SWNG mirrorlist). It serves the
+# full CL package set and is the same repoid a runtime CL9 system uses.
+[cl-channel]
+name=CloudLinux 9 - SWNG mirrorlist
+mirrorlist=https://repo.cloudlinux.com/cloudlinux/mirrorlists/cl-mirrors/cloudlinux-x86_64-server-9
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
+
+# Narrower BaseOS/AppStream static repos (CDN-served, no mirrorlist). These are
+# smaller slices of the package set; cl-channel above is the authoritative
+# source. Kept as backups for cases where the mirrorlist is unreachable.
 [cloudlinux9-baseos]
 name=CloudLinux 9 - BaseOS
 baseurl=https://repo.cloudlinux.com/cloudlinux/9/BaseOS/$basearch/os/
-# keep cloudlinux9-baseos here because we need repository to install rhn-client-tools
-# but at the same time we don't want to use it during migration because we have CLN channel
-enabled=0
+enabled=1
 gpgcheck=1
-gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
 
-# todo: is it needed at all?
-# [cloudlinux9-elevate]
-# name=CloudLinux 9 ELevate
-# baseurl=https://repo.cloudlinux.com/elevate/9/$basearch/
-# gpgcheck=1
-# enabled=1
-# gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
+[cloudlinux9-appstream]
+name=CloudLinux 9 - AppStream
+baseurl=https://repo.cloudlinux.com/cloudlinux/9/AppStream/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
