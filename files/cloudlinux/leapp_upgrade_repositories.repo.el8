@@ -49,19 +49,46 @@ gpgcheck=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-AlmaLinux
 
 # CL repositories used during migration.
+# Enabled so CloudLinux-specific packages (cagefs, alt-php*, lve-utils, etc.)
+# are available when the target CL8 system uses the no-auth (SWNG) scheme
+# and CLN is no longer serving them. Mirrors the el9 setup.
 
+# cl-channel is the primary CL8 no-auth repo (SWNG mirrorlist). It serves the
+# full CL package set and is the same repoid a runtime CL8 system uses.
+[cl-channel]
+name=CloudLinux 8 - SWNG mirrorlist
+mirrorlist=https://repo.cloudlinux.com/cloudlinux/mirrorlists/cl-mirrors/cloudlinux-x86_64-server-8
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
+
+# Narrower BaseOS/AppStream/PowerTools static repos (CDN-served). Smaller
+# slices of the package set; cl-channel above is the authoritative source.
+# Kept as backups when the mirrorlist is unreachable.
 [cloudlinux8-baseos]
 name=CloudLinux 8 - BaseOS
 baseurl=https://repo.cloudlinux.com/cloudlinux/8/BaseOS/$basearch/os/
-# keep cloudlinux8-baseos here because we need repository to install rhn-client-tools
-# but at the same time we don't want to use it during migration because we have CLN channel
-enabled=0
+enabled=1
 gpgcheck=1
-gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
+
+[cloudlinux8-appstream]
+name=CloudLinux 8 - AppStream
+baseurl=https://repo.cloudlinux.com/cloudlinux/8/AppStream/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
+
+[cloudlinux8-powertools]
+name=CloudLinux 8 - PowerTools
+baseurl=https://repo.cloudlinux.com/cloudlinux/8/PowerTools/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
 
 [cloudlinux8-elevate]
 name=CloudLinux 8 ELevate
 baseurl=https://repo.cloudlinux.com/elevate/8/$basearch/
-gpgcheck=1
 enabled=1
+gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
