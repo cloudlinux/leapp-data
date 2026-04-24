@@ -306,7 +306,7 @@
                 {
                     "major_version": "8",
                     "repo_type": "rpm",
-                    "repoid": "cl-channel",
+                    "repoid": "cloudlinux8-channel",
                     "arch": "x86_64",
                     "channel": "ga"
                 }

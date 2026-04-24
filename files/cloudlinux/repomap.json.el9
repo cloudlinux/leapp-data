@@ -437,7 +437,7 @@
                 {
                     "major_version": "9",
                     "repo_type": "rpm",
-                    "repoid": "cl-channel",
+                    "repoid": "cloudlinux9-channel",
                     "arch": "x86_64",
                     "channel": "ga"
                 }

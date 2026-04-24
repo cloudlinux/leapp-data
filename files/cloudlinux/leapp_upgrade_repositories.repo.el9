@@ -85,9 +85,15 @@ gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/9/RPM-GPG-K
 # are available when the source system is on the no-auth (SWNG) scheme and
 # CLN is no longer serving them.
 
-# cl-channel is the primary CL9 no-auth repo (SWNG mirrorlist). It serves the
-# full CL package set and is the same repoid a runtime CL9 system uses.
-[cl-channel]
+# cloudlinux9-channel is the primary CL9 no-auth repo (SWNG mirrorlist) we
+# provide for the upgrade transaction. It carries the full CL9 package set.
+#
+# Note: we use the distinct repoid "cloudlinux9-channel" (not "cl-channel")
+# to avoid clashing with the runtime "cl-channel" repo from the source
+# system's /etc/yum.repos.d/cl.repo (CL8), which is carried into the target
+# upgrade container and would otherwise trigger the
+# "YUM/DNF repository defined multiple times" inhibitor.
+[cloudlinux9-channel]
 name=CloudLinux 9 - SWNG mirrorlist
 mirrorlist=https://repo.cloudlinux.com/cloudlinux/mirrorlists/cl-mirrors/cloudlinux-x86_64-server-9
 enabled=1
