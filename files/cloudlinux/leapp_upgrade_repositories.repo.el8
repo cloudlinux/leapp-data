@@ -49,18 +49,16 @@ gpgcheck=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-AlmaLinux
 
 # CL repositories used during migration.
-# Enabled so CloudLinux-specific packages (cagefs, alt-php*, lve-utils, etc.)
-# are available when the target CL8 system uses the no-auth (SWNG) scheme
-# and CLN is no longer serving them. Mirrors the el9 setup.
+# Enabled so CloudLinux-specific packages are available when the source system
+# is on the no-auth scheme and CLN is no longer serving them.
 
 # cloudlinux8-channel is the primary CL8 no-auth repo (SWNG mirrorlist) we
 # provide for the upgrade transaction. It carries the full CL8 package set.
 #
 # Note: we use the distinct repoid "cloudlinux8-channel" (not "cl-channel")
 # so it does not clash with a runtime "cl-channel" repo if the source system
-# (or a mixed-state CL7 host) already defines one in /etc/yum.repos.d/. The
-# corresponding pesid in repomap.json.el8 maps cloudlinux8-channel -> this
-# repoid for CL7 sources.
+# (or a mixed-state CL7 host) already defines one in /etc/yum.repos.d/.
+# The corresponding pesid in repomap.json.el8 maps cloudlinux8-channel -> this repoid for CL7 sources.
 [cloudlinux8-channel]
 name=CloudLinux 8 - SWNG mirrorlist
 mirrorlist=https://repo.cloudlinux.com/cloudlinux/mirrorlists/cl-mirrors/cloudlinux-x86_64-server-8

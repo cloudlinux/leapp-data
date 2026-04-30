@@ -81,18 +81,16 @@ gpgcheck=1
 gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/9/RPM-GPG-KEY-AlmaLinux-9
 
 # CL repositories used during migration.
-# Enabled so CloudLinux-specific packages (cagefs, alt-php*, lve-utils, etc.)
-# are available when the source system is on the no-auth (SWNG) scheme and
-# CLN is no longer serving them.
+# Enabled so CloudLinux-specific packages are available when the source system
+# is on the no-auth scheme and CLN is no longer serving them.
 
 # cloudlinux9-channel is the primary CL9 no-auth repo (SWNG mirrorlist) we
 # provide for the upgrade transaction. It carries the full CL9 package set.
 #
 # Note: we use the distinct repoid "cloudlinux9-channel" (not "cl-channel")
-# to avoid clashing with the runtime "cl-channel" repo from the source
-# system's /etc/yum.repos.d/cl.repo (CL8), which is carried into the target
-# upgrade container and would otherwise trigger the
-# "YUM/DNF repository defined multiple times" inhibitor.
+# to avoid clashing with the runtime "cl-channel" repo from the source system's /etc/yum.repos.d/cl.repo,
+# which is carried into the target upgrade container and would otherwise
+# trigger the "YUM/DNF repository defined multiple times" inhibitor.
 [cloudlinux9-channel]
 name=CloudLinux 9 - SWNG mirrorlist
 mirrorlist=https://repo.cloudlinux.com/cloudlinux/mirrorlists/cl-mirrors/cloudlinux-x86_64-server-9
