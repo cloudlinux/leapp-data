@@ -40,6 +40,24 @@ module_hotfixes=true
 
 # PGDG Red Hat Enterprise Linux / Rocky stable repositories:
 
+[el8-pgdg96]
+name=PostgreSQL 9.6 for RHEL / Rocky 8 - $basearch
+baseurl=https://yum-archive.postgresql.org/9.6/redhat/rhel-8-$basearch
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/files/vendors.d/rpm-gpg/postgresql.gpg
+module_hotfixes=true
+
+
+[el8-pgdg10]
+name=PostgreSQL 10 for RHEL / Rocky 8 - $basearch
+baseurl=https://yum-archive.postgresql.org/10/redhat/rhel-8-$basearch
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/files/vendors.d/rpm-gpg/postgresql.gpg
+module_hotfixes=true
+
+
 [el8-pgdg15]
 name=PostgreSQL 15 for RHEL / Rocky 8 - $basearch
 baseurl=https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-$basearch

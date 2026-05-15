@@ -13,6 +13,20 @@
                     ]
                 },
                 {
+                    "source": "pgdg96",
+                    "target": [
+                        "el8-pgdg96"
+                    ]
+                },
+                {
+                    "source": "pgdg10",
+                    "target": [
+                        "el8-pgdg10",
+                        "el8-pgdg-centos8-sysupdates",
+                        "el8-pgdg-rhel8-extras"
+                    ]
+                },
+                {
                     "source": "pgdg15",
                     "target": [
                         "el8-pgdg15",
@@ -62,6 +76,30 @@
                 {
                     "major_version": "7",
                     "repoid": "pgdg-common",
+                    "arch": "x86_64",
+                    "channel": "ga",
+                    "repo_type": "rpm"
+                }
+            ]
+        },
+        {
+            "pesid": "pgdg96",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "pgdg96",
+                    "arch": "x86_64",
+                    "channel": "ga",
+                    "repo_type": "rpm"
+                }
+            ]
+        },
+        {
+            "pesid": "pgdg10",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "pgdg10",
                     "arch": "x86_64",
                     "channel": "ga",
                     "repo_type": "rpm"
@@ -134,6 +172,30 @@
                 {
                     "major_version": "8",
                     "repoid": "el8-pgdg-common",
+                    "arch": "x86_64",
+                    "channel": "ga",
+                    "repo_type": "rpm"
+                }
+            ]
+        },
+        {
+            "pesid": "el8-pgdg96",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "el8-pgdg96",
+                    "arch": "x86_64",
+                    "channel": "ga",
+                    "repo_type": "rpm"
+                }
+            ]
+        },
+        {
+            "pesid": "el8-pgdg10",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "el8-pgdg10",
                     "arch": "x86_64",
                     "channel": "ga",
                     "repo_type": "rpm"
