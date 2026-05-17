@@ -520492,6 +520492,44 @@
                 "minor_version": 0,
                 "os_name": "CloudLinux"
             }
+        },
+        {
+            "action": 3,
+            "arches": [
+                "x86_64"
+            ],
+            "id": 12948,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "lua-cjson",
+                        "repository": "imunify360"
+                    }
+                ],
+                "set_id": 16842
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 9,
+                "os_name": "CloudLinux"
+            },
+            "is_approved": true,
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "lua51-cjson",
+                        "repository": "cloudlinux8-imunify360"
+                    }
+                ],
+                "set_id": 16843
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CloudLinux"
+            }
         }
     ]
 }
