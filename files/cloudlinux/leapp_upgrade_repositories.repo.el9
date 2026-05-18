@@ -91,9 +91,17 @@ gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/9/RPM-GPG-K
 # to avoid clashing with the runtime "cl-channel" repo from the source system's /etc/yum.repos.d/cl.repo,
 # which is carried into the target upgrade container and would otherwise
 # trigger the "YUM/DNF repository defined multiple times" inhibitor.
+#
+# The mirrorlist URL uses $releasever so it resolves to the target's full
+# minor version (e.g. 9.7) inside the leapp target chroot. The path
+# `cloudlinux-x86_64-server-9` (no minor) routes to a frozen 2023
+# snapshot that no longer carries current packages - notably it lacks
+# the post-split lve-stats / lve-stats-common 4.3.1+ that source
+# systems pick up via /etc/yum.repos.d/cl.repo, which causes
+# DnfTransactionCheck file-ownership conflicts during `leapp upgrade`.
 [cloudlinux9-channel]
 name=CloudLinux 9 - SWNG mirrorlist
-mirrorlist=https://repo.cloudlinux.com/cloudlinux/mirrorlists/cl-mirrors/cloudlinux-x86_64-server-9
+mirrorlist=https://repo.cloudlinux.com/cloudlinux/mirrorlists/cl-mirrors/cloudlinux-x86_64-server-$releasever
 enabled=1
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
