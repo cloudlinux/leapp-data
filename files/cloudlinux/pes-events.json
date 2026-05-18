@@ -520495,9 +520495,6 @@
         },
         {
             "action": 3,
-            "arches": [
-                "x86_64"
-            ],
             "id": 12948,
             "in_packageset": {
                 "package": [
@@ -520529,7 +520526,10 @@
                 "major_version": 8,
                 "minor_version": 0,
                 "os_name": "CloudLinux"
-            }
+            },
+            "architectures": [
+                "x86_64"
+            ]
         }
     ]
 }
