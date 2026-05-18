@@ -53,7 +53,9 @@ make install PREFIX=%{buildroot}
 
 %changelog
 
-* Tue May 12 2026 Roman Prilipskii <rprilipskii@cloudlinux.com> - 0.3-9.cloudlinux
+* Sun May 17 2026 Roman Prilipskii <rprilipskii@cloudlinux.com> - 0.3-9.cloudlinux
+- CLOS-4056: Add CloudLinux SWNG repository entries to el8/el9 leapp upgrade and repomap data
+- CLOS-2598: Add lua-cjson -> lua51-cjson mapping to PES data
 - CLOS-4377: Drop legacy MariaDB package signing key block from mariadb-Server-GPG-KEY
 
 * Sun Aug 17 2025 Oleksandr Shyshatskyi <oshyshatskyi@cloudlinux.com> - 0.3-8.cloudlinux
