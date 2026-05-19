@@ -1,9 +1,1934 @@
 {
     "legal_notice": "",
-    "packageinfo": [],
+    "packageinfo": [
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22777,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql96",
+                        "repository": "pgdg96"
+                    }
+                ],
+                "set_id": 28159
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql96",
+                        "repository": "el8-pgdg96"
+                    }
+                ],
+                "set_id": 28160
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22778,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql96-server",
+                        "repository": "pgdg96"
+                    }
+                ],
+                "set_id": 28161
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql96-server",
+                        "repository": "el8-pgdg96"
+                    }
+                ],
+                "set_id": 28162
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22779,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql96-libs",
+                        "repository": "pgdg96"
+                    }
+                ],
+                "set_id": 28163
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql96-libs",
+                        "repository": "el8-pgdg96"
+                    }
+                ],
+                "set_id": 28164
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22780,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql96-contrib",
+                        "repository": "pgdg96"
+                    }
+                ],
+                "set_id": 28165
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql96-contrib",
+                        "repository": "el8-pgdg96"
+                    }
+                ],
+                "set_id": 28166
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22781,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql10",
+                        "repository": "pgdg10"
+                    }
+                ],
+                "set_id": 28167
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql10",
+                        "repository": "el8-pgdg10"
+                    }
+                ],
+                "set_id": 28168
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22782,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql10-server",
+                        "repository": "pgdg10"
+                    }
+                ],
+                "set_id": 28169
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql10-server",
+                        "repository": "el8-pgdg10"
+                    }
+                ],
+                "set_id": 28170
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22783,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql10-libs",
+                        "repository": "pgdg10"
+                    }
+                ],
+                "set_id": 28171
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql10-libs",
+                        "repository": "el8-pgdg10"
+                    }
+                ],
+                "set_id": 28172
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22784,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql10-contrib",
+                        "repository": "pgdg10"
+                    }
+                ],
+                "set_id": 28173
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql10-contrib",
+                        "repository": "el8-pgdg10"
+                    }
+                ],
+                "set_id": 28174
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22785,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql11",
+                        "repository": "pgdg11"
+                    }
+                ],
+                "set_id": 28175
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql11",
+                        "repository": "el8-pgdg11"
+                    }
+                ],
+                "set_id": 28176
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22786,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql11-server",
+                        "repository": "pgdg11"
+                    }
+                ],
+                "set_id": 28177
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql11-server",
+                        "repository": "el8-pgdg11"
+                    }
+                ],
+                "set_id": 28178
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22787,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql11-libs",
+                        "repository": "pgdg11"
+                    }
+                ],
+                "set_id": 28179
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql11-libs",
+                        "repository": "el8-pgdg11"
+                    }
+                ],
+                "set_id": 28180
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22788,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql11-contrib",
+                        "repository": "pgdg11"
+                    }
+                ],
+                "set_id": 28181
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql11-contrib",
+                        "repository": "el8-pgdg11"
+                    }
+                ],
+                "set_id": 28182
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22789,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql12",
+                        "repository": "pgdg12"
+                    }
+                ],
+                "set_id": 28183
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql12",
+                        "repository": "el8-pgdg12"
+                    }
+                ],
+                "set_id": 28184
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22790,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql12-server",
+                        "repository": "pgdg12"
+                    }
+                ],
+                "set_id": 28185
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql12-server",
+                        "repository": "el8-pgdg12"
+                    }
+                ],
+                "set_id": 28186
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22791,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql12-libs",
+                        "repository": "pgdg12"
+                    }
+                ],
+                "set_id": 28187
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql12-libs",
+                        "repository": "el8-pgdg12"
+                    }
+                ],
+                "set_id": 28188
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22792,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql12-contrib",
+                        "repository": "pgdg12"
+                    }
+                ],
+                "set_id": 28189
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql12-contrib",
+                        "repository": "el8-pgdg12"
+                    }
+                ],
+                "set_id": 28190
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22793,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql13",
+                        "repository": "pgdg13"
+                    }
+                ],
+                "set_id": 28191
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql13",
+                        "repository": "el8-pgdg13"
+                    }
+                ],
+                "set_id": 28192
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22794,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql13-server",
+                        "repository": "pgdg13"
+                    }
+                ],
+                "set_id": 28193
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql13-server",
+                        "repository": "el8-pgdg13"
+                    }
+                ],
+                "set_id": 28194
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22795,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql13-libs",
+                        "repository": "pgdg13"
+                    }
+                ],
+                "set_id": 28195
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql13-libs",
+                        "repository": "el8-pgdg13"
+                    }
+                ],
+                "set_id": 28196
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22796,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql13-contrib",
+                        "repository": "pgdg13"
+                    }
+                ],
+                "set_id": 28197
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql13-contrib",
+                        "repository": "el8-pgdg13"
+                    }
+                ],
+                "set_id": 28198
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22797,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql14",
+                        "repository": "pgdg14"
+                    }
+                ],
+                "set_id": 28199
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql14",
+                        "repository": "el8-pgdg14"
+                    }
+                ],
+                "set_id": 28200
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22798,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql14-server",
+                        "repository": "pgdg14"
+                    }
+                ],
+                "set_id": 28201
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql14-server",
+                        "repository": "el8-pgdg14"
+                    }
+                ],
+                "set_id": 28202
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22799,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql14-libs",
+                        "repository": "pgdg14"
+                    }
+                ],
+                "set_id": 28203
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql14-libs",
+                        "repository": "el8-pgdg14"
+                    }
+                ],
+                "set_id": 28204
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22800,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql14-contrib",
+                        "repository": "pgdg14"
+                    }
+                ],
+                "set_id": 28205
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql14-contrib",
+                        "repository": "el8-pgdg14"
+                    }
+                ],
+                "set_id": 28206
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22801,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql15",
+                        "repository": "pgdg15"
+                    }
+                ],
+                "set_id": 28207
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql15",
+                        "repository": "el8-pgdg15"
+                    }
+                ],
+                "set_id": 28208
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22802,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql15-server",
+                        "repository": "pgdg15"
+                    }
+                ],
+                "set_id": 28209
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql15-server",
+                        "repository": "el8-pgdg15"
+                    }
+                ],
+                "set_id": 28210
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22803,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql15-libs",
+                        "repository": "pgdg15"
+                    }
+                ],
+                "set_id": 28211
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql15-libs",
+                        "repository": "el8-pgdg15"
+                    }
+                ],
+                "set_id": 28212
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22804,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql15-contrib",
+                        "repository": "pgdg15"
+                    }
+                ],
+                "set_id": 28213
+            },
+            "initial_release": {
+                "major_version": 7,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql15-contrib",
+                        "repository": "el8-pgdg15"
+                    }
+                ],
+                "set_id": 28214
+            },
+            "release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22805,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql11",
+                        "repository": "pgdg11"
+                    }
+                ],
+                "set_id": 28215
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql11",
+                        "repository": "el9-pgdg11"
+                    }
+                ],
+                "set_id": 28216
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22806,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql11-server",
+                        "repository": "pgdg11"
+                    }
+                ],
+                "set_id": 28217
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql11-server",
+                        "repository": "el9-pgdg11"
+                    }
+                ],
+                "set_id": 28218
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22807,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql11-libs",
+                        "repository": "pgdg11"
+                    }
+                ],
+                "set_id": 28219
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql11-libs",
+                        "repository": "el9-pgdg11"
+                    }
+                ],
+                "set_id": 28220
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22808,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql11-contrib",
+                        "repository": "pgdg11"
+                    }
+                ],
+                "set_id": 28221
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql11-contrib",
+                        "repository": "el9-pgdg11"
+                    }
+                ],
+                "set_id": 28222
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22809,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql12",
+                        "repository": "pgdg12"
+                    }
+                ],
+                "set_id": 28223
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql12",
+                        "repository": "el9-pgdg12"
+                    }
+                ],
+                "set_id": 28224
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22810,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql12-server",
+                        "repository": "pgdg12"
+                    }
+                ],
+                "set_id": 28225
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql12-server",
+                        "repository": "el9-pgdg12"
+                    }
+                ],
+                "set_id": 28226
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22811,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql12-libs",
+                        "repository": "pgdg12"
+                    }
+                ],
+                "set_id": 28227
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql12-libs",
+                        "repository": "el9-pgdg12"
+                    }
+                ],
+                "set_id": 28228
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22812,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql12-contrib",
+                        "repository": "pgdg12"
+                    }
+                ],
+                "set_id": 28229
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql12-contrib",
+                        "repository": "el9-pgdg12"
+                    }
+                ],
+                "set_id": 28230
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22813,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql13",
+                        "repository": "pgdg13"
+                    }
+                ],
+                "set_id": 28231
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql13",
+                        "repository": "el9-pgdg13"
+                    }
+                ],
+                "set_id": 28232
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22814,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql13-server",
+                        "repository": "pgdg13"
+                    }
+                ],
+                "set_id": 28233
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql13-server",
+                        "repository": "el9-pgdg13"
+                    }
+                ],
+                "set_id": 28234
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22815,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql13-libs",
+                        "repository": "pgdg13"
+                    }
+                ],
+                "set_id": 28235
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql13-libs",
+                        "repository": "el9-pgdg13"
+                    }
+                ],
+                "set_id": 28236
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22816,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql13-contrib",
+                        "repository": "pgdg13"
+                    }
+                ],
+                "set_id": 28237
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql13-contrib",
+                        "repository": "el9-pgdg13"
+                    }
+                ],
+                "set_id": 28238
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22817,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql14",
+                        "repository": "pgdg14"
+                    }
+                ],
+                "set_id": 28239
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql14",
+                        "repository": "el9-pgdg14"
+                    }
+                ],
+                "set_id": 28240
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22818,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql14-server",
+                        "repository": "pgdg14"
+                    }
+                ],
+                "set_id": 28241
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql14-server",
+                        "repository": "el9-pgdg14"
+                    }
+                ],
+                "set_id": 28242
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22819,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql14-libs",
+                        "repository": "pgdg14"
+                    }
+                ],
+                "set_id": 28243
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql14-libs",
+                        "repository": "el9-pgdg14"
+                    }
+                ],
+                "set_id": 28244
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22820,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql14-contrib",
+                        "repository": "pgdg14"
+                    }
+                ],
+                "set_id": 28245
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql14-contrib",
+                        "repository": "el9-pgdg14"
+                    }
+                ],
+                "set_id": 28246
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22821,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql15",
+                        "repository": "pgdg15"
+                    }
+                ],
+                "set_id": 28247
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql15",
+                        "repository": "el9-pgdg15"
+                    }
+                ],
+                "set_id": 28248
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22822,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql15-server",
+                        "repository": "pgdg15"
+                    }
+                ],
+                "set_id": 28249
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql15-server",
+                        "repository": "el9-pgdg15"
+                    }
+                ],
+                "set_id": 28250
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22823,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql15-libs",
+                        "repository": "pgdg15"
+                    }
+                ],
+                "set_id": 28251
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql15-libs",
+                        "repository": "el9-pgdg15"
+                    }
+                ],
+                "set_id": 28252
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22824,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql15-contrib",
+                        "repository": "pgdg15"
+                    }
+                ],
+                "set_id": 28253
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql15-contrib",
+                        "repository": "el9-pgdg15"
+                    }
+                ],
+                "set_id": 28254
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22825,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql16",
+                        "repository": "pgdg16"
+                    }
+                ],
+                "set_id": 28255
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql16",
+                        "repository": "el9-pgdg16"
+                    }
+                ],
+                "set_id": 28256
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22826,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql16-server",
+                        "repository": "pgdg16"
+                    }
+                ],
+                "set_id": 28257
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql16-server",
+                        "repository": "el9-pgdg16"
+                    }
+                ],
+                "set_id": 28258
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22827,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql16-libs",
+                        "repository": "pgdg16"
+                    }
+                ],
+                "set_id": 28259
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql16-libs",
+                        "repository": "el9-pgdg16"
+                    }
+                ],
+                "set_id": 28260
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22828,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql16-contrib",
+                        "repository": "pgdg16"
+                    }
+                ],
+                "set_id": 28261
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql16-contrib",
+                        "repository": "el9-pgdg16"
+                    }
+                ],
+                "set_id": 28262
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        }
+    ],
     "provided_data_streams": [
         "2.0",
         "3.0"
     ],
-    "timestamp": "202306191746Z"
+    "timestamp": "202405060000Z"
 }
