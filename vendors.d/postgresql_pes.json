@@ -6,49 +6,12 @@
             "architectures": [
                 "x86_64"
             ],
-            "id": 22777,
-            "in_packageset": {
-                "package": [
-                    {
-                        "module_stream": null,
-                        "name": "postgresql96",
-                        "repository": "pgdg96"
-                    }
-                ],
-                "set_id": 28159
-            },
-            "initial_release": {
-                "major_version": 7,
-                "minor_version": 0,
-                "os_name": "CentOS"
-            },
-            "out_packageset": {
-                "package": [
-                    {
-                        "module_stream": null,
-                        "name": "postgresql96",
-                        "repository": "el8-pgdg96"
-                    }
-                ],
-                "set_id": 28160
-            },
-            "release": {
-                "major_version": 8,
-                "minor_version": 0,
-                "os_name": "AlmaLinux"
-            }
-        },
-        {
-            "action": 6,
-            "architectures": [
-                "x86_64"
-            ],
             "id": 22778,
             "in_packageset": {
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql96-server",
+                        "name": "postgresql96",
                         "repository": "pgdg96"
                     }
                 ],
@@ -63,7 +26,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql96-server",
+                        "name": "postgresql96",
                         "repository": "el8-pgdg96"
                     }
                 ],
@@ -85,7 +48,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql96-libs",
+                        "name": "postgresql96-server",
                         "repository": "pgdg96"
                     }
                 ],
@@ -100,7 +63,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql96-libs",
+                        "name": "postgresql96-server",
                         "repository": "el8-pgdg96"
                     }
                 ],
@@ -122,7 +85,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql96-contrib",
+                        "name": "postgresql96-libs",
                         "repository": "pgdg96"
                     }
                 ],
@@ -137,7 +100,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql96-contrib",
+                        "name": "postgresql96-libs",
                         "repository": "el8-pgdg96"
                     }
                 ],
@@ -159,8 +122,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql10",
-                        "repository": "pgdg10"
+                        "name": "postgresql96-contrib",
+                        "repository": "pgdg96"
                     }
                 ],
                 "set_id": 28167
@@ -174,8 +137,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql10",
-                        "repository": "el8-pgdg10"
+                        "name": "postgresql96-contrib",
+                        "repository": "el8-pgdg96"
                     }
                 ],
                 "set_id": 28168
@@ -196,7 +159,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql10-server",
+                        "name": "postgresql10",
                         "repository": "pgdg10"
                     }
                 ],
@@ -211,7 +174,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql10-server",
+                        "name": "postgresql10",
                         "repository": "el8-pgdg10"
                     }
                 ],
@@ -233,7 +196,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql10-libs",
+                        "name": "postgresql10-server",
                         "repository": "pgdg10"
                     }
                 ],
@@ -248,7 +211,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql10-libs",
+                        "name": "postgresql10-server",
                         "repository": "el8-pgdg10"
                     }
                 ],
@@ -270,7 +233,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql10-contrib",
+                        "name": "postgresql10-libs",
                         "repository": "pgdg10"
                     }
                 ],
@@ -285,7 +248,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql10-contrib",
+                        "name": "postgresql10-libs",
                         "repository": "el8-pgdg10"
                     }
                 ],
@@ -307,8 +270,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql11",
-                        "repository": "pgdg11"
+                        "name": "postgresql10-contrib",
+                        "repository": "pgdg10"
                     }
                 ],
                 "set_id": 28175
@@ -322,8 +285,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql11",
-                        "repository": "el8-pgdg11"
+                        "name": "postgresql10-contrib",
+                        "repository": "el8-pgdg10"
                     }
                 ],
                 "set_id": 28176
@@ -344,7 +307,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql11-server",
+                        "name": "postgresql11",
                         "repository": "pgdg11"
                     }
                 ],
@@ -359,7 +322,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql11-server",
+                        "name": "postgresql11",
                         "repository": "el8-pgdg11"
                     }
                 ],
@@ -381,7 +344,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql11-libs",
+                        "name": "postgresql11-server",
                         "repository": "pgdg11"
                     }
                 ],
@@ -396,7 +359,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql11-libs",
+                        "name": "postgresql11-server",
                         "repository": "el8-pgdg11"
                     }
                 ],
@@ -418,7 +381,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql11-contrib",
+                        "name": "postgresql11-libs",
                         "repository": "pgdg11"
                     }
                 ],
@@ -433,7 +396,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql11-contrib",
+                        "name": "postgresql11-libs",
                         "repository": "el8-pgdg11"
                     }
                 ],
@@ -455,8 +418,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql12",
-                        "repository": "pgdg12"
+                        "name": "postgresql11-contrib",
+                        "repository": "pgdg11"
                     }
                 ],
                 "set_id": 28183
@@ -470,8 +433,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql12",
-                        "repository": "el8-pgdg12"
+                        "name": "postgresql11-contrib",
+                        "repository": "el8-pgdg11"
                     }
                 ],
                 "set_id": 28184
@@ -492,7 +455,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql12-server",
+                        "name": "postgresql12",
                         "repository": "pgdg12"
                     }
                 ],
@@ -507,7 +470,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql12-server",
+                        "name": "postgresql12",
                         "repository": "el8-pgdg12"
                     }
                 ],
@@ -529,7 +492,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql12-libs",
+                        "name": "postgresql12-server",
                         "repository": "pgdg12"
                     }
                 ],
@@ -544,7 +507,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql12-libs",
+                        "name": "postgresql12-server",
                         "repository": "el8-pgdg12"
                     }
                 ],
@@ -566,7 +529,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql12-contrib",
+                        "name": "postgresql12-libs",
                         "repository": "pgdg12"
                     }
                 ],
@@ -581,7 +544,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql12-contrib",
+                        "name": "postgresql12-libs",
                         "repository": "el8-pgdg12"
                     }
                 ],
@@ -603,8 +566,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql13",
-                        "repository": "pgdg13"
+                        "name": "postgresql12-contrib",
+                        "repository": "pgdg12"
                     }
                 ],
                 "set_id": 28191
@@ -618,8 +581,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql13",
-                        "repository": "el8-pgdg13"
+                        "name": "postgresql12-contrib",
+                        "repository": "el8-pgdg12"
                     }
                 ],
                 "set_id": 28192
@@ -640,7 +603,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql13-server",
+                        "name": "postgresql13",
                         "repository": "pgdg13"
                     }
                 ],
@@ -655,7 +618,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql13-server",
+                        "name": "postgresql13",
                         "repository": "el8-pgdg13"
                     }
                 ],
@@ -677,7 +640,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql13-libs",
+                        "name": "postgresql13-server",
                         "repository": "pgdg13"
                     }
                 ],
@@ -692,7 +655,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql13-libs",
+                        "name": "postgresql13-server",
                         "repository": "el8-pgdg13"
                     }
                 ],
@@ -714,7 +677,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql13-contrib",
+                        "name": "postgresql13-libs",
                         "repository": "pgdg13"
                     }
                 ],
@@ -729,7 +692,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql13-contrib",
+                        "name": "postgresql13-libs",
                         "repository": "el8-pgdg13"
                     }
                 ],
@@ -751,8 +714,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql14",
-                        "repository": "pgdg14"
+                        "name": "postgresql13-contrib",
+                        "repository": "pgdg13"
                     }
                 ],
                 "set_id": 28199
@@ -766,8 +729,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql14",
-                        "repository": "el8-pgdg14"
+                        "name": "postgresql13-contrib",
+                        "repository": "el8-pgdg13"
                     }
                 ],
                 "set_id": 28200
@@ -788,7 +751,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql14-server",
+                        "name": "postgresql14",
                         "repository": "pgdg14"
                     }
                 ],
@@ -803,7 +766,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql14-server",
+                        "name": "postgresql14",
                         "repository": "el8-pgdg14"
                     }
                 ],
@@ -825,7 +788,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql14-libs",
+                        "name": "postgresql14-server",
                         "repository": "pgdg14"
                     }
                 ],
@@ -840,7 +803,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql14-libs",
+                        "name": "postgresql14-server",
                         "repository": "el8-pgdg14"
                     }
                 ],
@@ -862,7 +825,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql14-contrib",
+                        "name": "postgresql14-libs",
                         "repository": "pgdg14"
                     }
                 ],
@@ -877,7 +840,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql14-contrib",
+                        "name": "postgresql14-libs",
                         "repository": "el8-pgdg14"
                     }
                 ],
@@ -899,8 +862,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql15",
-                        "repository": "pgdg15"
+                        "name": "postgresql14-contrib",
+                        "repository": "pgdg14"
                     }
                 ],
                 "set_id": 28207
@@ -914,8 +877,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql15",
-                        "repository": "el8-pgdg15"
+                        "name": "postgresql14-contrib",
+                        "repository": "el8-pgdg14"
                     }
                 ],
                 "set_id": 28208
@@ -936,7 +899,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql15-server",
+                        "name": "postgresql15",
                         "repository": "pgdg15"
                     }
                 ],
@@ -951,7 +914,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql15-server",
+                        "name": "postgresql15",
                         "repository": "el8-pgdg15"
                     }
                 ],
@@ -973,7 +936,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql15-libs",
+                        "name": "postgresql15-server",
                         "repository": "pgdg15"
                     }
                 ],
@@ -988,7 +951,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql15-libs",
+                        "name": "postgresql15-server",
                         "repository": "el8-pgdg15"
                     }
                 ],
@@ -1010,7 +973,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql15-contrib",
+                        "name": "postgresql15-libs",
                         "repository": "pgdg15"
                     }
                 ],
@@ -1025,7 +988,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql15-contrib",
+                        "name": "postgresql15-libs",
                         "repository": "el8-pgdg15"
                     }
                 ],
@@ -1047,14 +1010,14 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql11",
-                        "repository": "pgdg11"
+                        "name": "postgresql15-contrib",
+                        "repository": "pgdg15"
                     }
                 ],
                 "set_id": 28215
             },
             "initial_release": {
-                "major_version": 8,
+                "major_version": 7,
                 "minor_version": 0,
                 "os_name": "CentOS"
             },
@@ -1062,14 +1025,14 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql11",
-                        "repository": "el9-pgdg11"
+                        "name": "postgresql15-contrib",
+                        "repository": "el8-pgdg15"
                     }
                 ],
                 "set_id": 28216
             },
             "release": {
-                "major_version": 9,
+                "major_version": 8,
                 "minor_version": 0,
                 "os_name": "AlmaLinux"
             }
@@ -1084,7 +1047,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql11-server",
+                        "name": "postgresql11",
                         "repository": "pgdg11"
                     }
                 ],
@@ -1099,7 +1062,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql11-server",
+                        "name": "postgresql11",
                         "repository": "el9-pgdg11"
                     }
                 ],
@@ -1121,7 +1084,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql11-libs",
+                        "name": "postgresql11-server",
                         "repository": "pgdg11"
                     }
                 ],
@@ -1136,7 +1099,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql11-libs",
+                        "name": "postgresql11-server",
                         "repository": "el9-pgdg11"
                     }
                 ],
@@ -1158,7 +1121,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql11-contrib",
+                        "name": "postgresql11-libs",
                         "repository": "pgdg11"
                     }
                 ],
@@ -1173,7 +1136,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql11-contrib",
+                        "name": "postgresql11-libs",
                         "repository": "el9-pgdg11"
                     }
                 ],
@@ -1195,8 +1158,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql12",
-                        "repository": "pgdg12"
+                        "name": "postgresql11-contrib",
+                        "repository": "pgdg11"
                     }
                 ],
                 "set_id": 28223
@@ -1210,8 +1173,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql12",
-                        "repository": "el9-pgdg12"
+                        "name": "postgresql11-contrib",
+                        "repository": "el9-pgdg11"
                     }
                 ],
                 "set_id": 28224
@@ -1232,7 +1195,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql12-server",
+                        "name": "postgresql12",
                         "repository": "pgdg12"
                     }
                 ],
@@ -1247,7 +1210,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql12-server",
+                        "name": "postgresql12",
                         "repository": "el9-pgdg12"
                     }
                 ],
@@ -1269,7 +1232,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql12-libs",
+                        "name": "postgresql12-server",
                         "repository": "pgdg12"
                     }
                 ],
@@ -1284,7 +1247,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql12-libs",
+                        "name": "postgresql12-server",
                         "repository": "el9-pgdg12"
                     }
                 ],
@@ -1306,7 +1269,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql12-contrib",
+                        "name": "postgresql12-libs",
                         "repository": "pgdg12"
                     }
                 ],
@@ -1321,7 +1284,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql12-contrib",
+                        "name": "postgresql12-libs",
                         "repository": "el9-pgdg12"
                     }
                 ],
@@ -1343,8 +1306,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql13",
-                        "repository": "pgdg13"
+                        "name": "postgresql12-contrib",
+                        "repository": "pgdg12"
                     }
                 ],
                 "set_id": 28231
@@ -1358,8 +1321,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql13",
-                        "repository": "el9-pgdg13"
+                        "name": "postgresql12-contrib",
+                        "repository": "el9-pgdg12"
                     }
                 ],
                 "set_id": 28232
@@ -1380,7 +1343,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql13-server",
+                        "name": "postgresql13",
                         "repository": "pgdg13"
                     }
                 ],
@@ -1395,7 +1358,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql13-server",
+                        "name": "postgresql13",
                         "repository": "el9-pgdg13"
                     }
                 ],
@@ -1417,7 +1380,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql13-libs",
+                        "name": "postgresql13-server",
                         "repository": "pgdg13"
                     }
                 ],
@@ -1432,7 +1395,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql13-libs",
+                        "name": "postgresql13-server",
                         "repository": "el9-pgdg13"
                     }
                 ],
@@ -1454,7 +1417,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql13-contrib",
+                        "name": "postgresql13-libs",
                         "repository": "pgdg13"
                     }
                 ],
@@ -1469,7 +1432,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql13-contrib",
+                        "name": "postgresql13-libs",
                         "repository": "el9-pgdg13"
                     }
                 ],
@@ -1491,8 +1454,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql14",
-                        "repository": "pgdg14"
+                        "name": "postgresql13-contrib",
+                        "repository": "pgdg13"
                     }
                 ],
                 "set_id": 28239
@@ -1506,8 +1469,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql14",
-                        "repository": "el9-pgdg14"
+                        "name": "postgresql13-contrib",
+                        "repository": "el9-pgdg13"
                     }
                 ],
                 "set_id": 28240
@@ -1528,7 +1491,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql14-server",
+                        "name": "postgresql14",
                         "repository": "pgdg14"
                     }
                 ],
@@ -1543,7 +1506,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql14-server",
+                        "name": "postgresql14",
                         "repository": "el9-pgdg14"
                     }
                 ],
@@ -1565,7 +1528,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql14-libs",
+                        "name": "postgresql14-server",
                         "repository": "pgdg14"
                     }
                 ],
@@ -1580,7 +1543,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql14-libs",
+                        "name": "postgresql14-server",
                         "repository": "el9-pgdg14"
                     }
                 ],
@@ -1602,7 +1565,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql14-contrib",
+                        "name": "postgresql14-libs",
                         "repository": "pgdg14"
                     }
                 ],
@@ -1617,7 +1580,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql14-contrib",
+                        "name": "postgresql14-libs",
                         "repository": "el9-pgdg14"
                     }
                 ],
@@ -1639,8 +1602,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql15",
-                        "repository": "pgdg15"
+                        "name": "postgresql14-contrib",
+                        "repository": "pgdg14"
                     }
                 ],
                 "set_id": 28247
@@ -1654,8 +1617,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql15",
-                        "repository": "el9-pgdg15"
+                        "name": "postgresql14-contrib",
+                        "repository": "el9-pgdg14"
                     }
                 ],
                 "set_id": 28248
@@ -1676,7 +1639,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql15-server",
+                        "name": "postgresql15",
                         "repository": "pgdg15"
                     }
                 ],
@@ -1691,7 +1654,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql15-server",
+                        "name": "postgresql15",
                         "repository": "el9-pgdg15"
                     }
                 ],
@@ -1713,7 +1676,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql15-libs",
+                        "name": "postgresql15-server",
                         "repository": "pgdg15"
                     }
                 ],
@@ -1728,7 +1691,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql15-libs",
+                        "name": "postgresql15-server",
                         "repository": "el9-pgdg15"
                     }
                 ],
@@ -1750,7 +1713,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql15-contrib",
+                        "name": "postgresql15-libs",
                         "repository": "pgdg15"
                     }
                 ],
@@ -1765,7 +1728,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql15-contrib",
+                        "name": "postgresql15-libs",
                         "repository": "el9-pgdg15"
                     }
                 ],
@@ -1787,8 +1750,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql16",
-                        "repository": "pgdg16"
+                        "name": "postgresql15-contrib",
+                        "repository": "pgdg15"
                     }
                 ],
                 "set_id": 28255
@@ -1802,8 +1765,8 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql16",
-                        "repository": "el9-pgdg16"
+                        "name": "postgresql15-contrib",
+                        "repository": "el9-pgdg15"
                     }
                 ],
                 "set_id": 28256
@@ -1824,7 +1787,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql16-server",
+                        "name": "postgresql16",
                         "repository": "pgdg16"
                     }
                 ],
@@ -1839,7 +1802,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql16-server",
+                        "name": "postgresql16",
                         "repository": "el9-pgdg16"
                     }
                 ],
@@ -1861,7 +1824,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql16-libs",
+                        "name": "postgresql16-server",
                         "repository": "pgdg16"
                     }
                 ],
@@ -1876,7 +1839,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql16-libs",
+                        "name": "postgresql16-server",
                         "repository": "el9-pgdg16"
                     }
                 ],
@@ -1898,7 +1861,7 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql16-contrib",
+                        "name": "postgresql16-libs",
                         "repository": "pgdg16"
                     }
                 ],
@@ -1913,11 +1876,48 @@
                 "package": [
                     {
                         "module_stream": null,
-                        "name": "postgresql16-contrib",
+                        "name": "postgresql16-libs",
                         "repository": "el9-pgdg16"
                     }
                 ],
                 "set_id": 28262
+            },
+            "release": {
+                "major_version": 9,
+                "minor_version": 0,
+                "os_name": "AlmaLinux"
+            }
+        },
+        {
+            "action": 6,
+            "architectures": [
+                "x86_64"
+            ],
+            "id": 22829,
+            "in_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql16-contrib",
+                        "repository": "pgdg16"
+                    }
+                ],
+                "set_id": 28263
+            },
+            "initial_release": {
+                "major_version": 8,
+                "minor_version": 0,
+                "os_name": "CentOS"
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "module_stream": null,
+                        "name": "postgresql16-contrib",
+                        "repository": "el9-pgdg16"
+                    }
+                ],
+                "set_id": 28264
             },
             "release": {
                 "major_version": 9,
