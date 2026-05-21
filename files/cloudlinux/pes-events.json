@@ -520495,10 +520495,7 @@
         },
         {
             "action": 3,
-            "arches": [
-                "x86_64"
-            ],
-            "id": 12948,
+            "id": 22777,
             "in_packageset": {
                 "package": [
                     {
@@ -520507,7 +520504,7 @@
                         "repository": "imunify360"
                     }
                 ],
-                "set_id": 16842
+                "set_id": 28159
             },
             "initial_release": {
                 "major_version": 7,
@@ -520523,13 +520520,16 @@
                         "repository": "cloudlinux8-imunify360"
                     }
                 ],
-                "set_id": 16843
+                "set_id": 28160
             },
             "release": {
                 "major_version": 8,
                 "minor_version": 0,
                 "os_name": "CloudLinux"
-            }
+            },
+            "architectures": [
+                "x86_64"
+            ]
         }
     ]
 }
