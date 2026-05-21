@@ -70,7 +70,7 @@ make install PREFIX=%{buildroot}
 - CLOS-2988: Fix imunify360-firewall package upgrade
 - CLOS-3416: Fix kmod-lve-lts installation during upgrade from CloudLinux 7 to CloudLinux 8
 
-* Mon Feb 27 2025 Oleksandr Shyshatskyi <oshyshatskyi@cloudlinux.com> - 0.3-5.cloudlinux
+* Thu Feb 27 2025 Oleksandr Shyshatskyi <oshyshatskyi@cloudlinux.com> - 0.3-5.cloudlinux
 - CLOS-3188: Fix kernelcare mapping for CloudLinux 8
 
 * Mon Feb 3 2025 Oleksandr Shyshatskyi <oshyshatskyi@cloudlinux.com> - 0.3-4.cloudlinux
