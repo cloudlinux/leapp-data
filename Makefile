@@ -50,6 +50,8 @@ core:
 
 	find $(LEAPP_BUILD_DIR) -name '*.el?' -delete
 
+	python3 tools/repomap_check.py --distro $(DIST_NAME) $(TARGET_FILES_DIR)/repomap.json
+
 vendors:
 	mkdir -p $(VENDORS_DIR)
 	cp -rf vendors.d/* $(VENDORS_DIR)/
@@ -68,7 +70,14 @@ vendors:
 
 	find $(LEAPP_BUILD_DIR) -name '*.el?' -delete
 
-	find $(VENDORS_DIR) -name '*.json' | xargs -n 1 python3 tools/repomap_check.py
+	# vendors.d/ is shared source built once per distro package, so its repomap
+	# entries carry a {distro} placeholder rather than a hardcoded name. leapp
+	# matches entries on the distro id, so a placeholder that survives to the
+	# built package is an entry that silently never matches.
+	grep -rl '{distro}' $(VENDORS_DIR) | xargs -r sed -i 's/{distro}/$(DIST_NAME)/g'
+
+	find $(VENDORS_DIR) -name '*_map.json' -print0 \
+		| xargs -0 -r python3 tools/repomap_check.py --distro $(DIST_NAME)
 
 test:
 	$(eval JSON_FILES := $(shell find $(buildroot) -path "./tests" -prune -o -name "*pes*.json*" -print0 | xargs -0 echo))

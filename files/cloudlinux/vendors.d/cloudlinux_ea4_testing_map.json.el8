@@ -1,6 +1,6 @@
 {
     "datetime": "202204020934Z",
-    "version_format": "1.2.0",
+    "version_format": "1.3.0",
     "provided_data_streams": [
         "2.0",
         "3.0"
@@ -12,7 +12,9 @@
             "entries": [
                 {
                     "source": "cl-ea4-testing",
-                    "target": ["cl8-ea4-testing"]
+                    "target": [
+                        "cl8-ea4-testing"
+                    ]
                 }
             ]
         }
@@ -26,7 +28,8 @@
                     "major_version": "7",
                     "repo_type": "rpm",
                     "arch": "x86_64",
-                    "channel": "beta"
+                    "channel": "beta",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -38,7 +41,8 @@
                     "major_version": "8",
                     "repo_type": "rpm",
                     "arch": "x86_64",
-                    "channel": "beta"
+                    "channel": "beta",
+                    "distro": "cloudlinux"
                 }
             ]
         }

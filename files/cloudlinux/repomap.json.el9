@@ -1,6 +1,6 @@
 {
     "datetime": "202204020934Z",
-    "version_format": "1.2.0",
+    "version_format": "1.3.0",
     "provided_data_streams": [
         "3.0"
     ],
@@ -115,7 +115,8 @@
                     "major_version": "8",
                     "repo_type": "rpm",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -127,7 +128,8 @@
                     "repo_type": "rpm",
                     "repoid": "appstream",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -139,7 +141,8 @@
                     "repoid": "powertools",
                     "repo_type": "rpm",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -151,7 +154,8 @@
                     "repo_type": "rpm",
                     "repoid": "ha",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -163,7 +167,8 @@
                     "repo_type": "rpm",
                     "repoid": "resilientstorage",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -175,7 +180,8 @@
                     "repo_type": "rpm",
                     "repoid": "extras",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -187,7 +193,8 @@
                     "repo_type": "rpm",
                     "repoid": "rt",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -199,7 +206,8 @@
                     "repo_type": "rpm",
                     "repoid": "nfv",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -211,7 +219,8 @@
                     "repo_type": "rpm",
                     "repoid": "sap",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -223,7 +232,8 @@
                     "repo_type": "rpm",
                     "repoid": "saphana",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -235,7 +245,8 @@
                     "major_version": "9",
                     "repo_type": "rpm",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -247,7 +258,8 @@
                     "repo_type": "rpm",
                     "repoid": "almalinux9-appstream",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -259,7 +271,8 @@
                     "repoid": "almalinux9-crb",
                     "repo_type": "rpm",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -271,7 +284,8 @@
                     "repo_type": "rpm",
                     "repoid": "almalinux9-highavailability",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -283,7 +297,8 @@
                     "repo_type": "rpm",
                     "repoid": "almalinux9-resilientstorage",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -295,7 +310,8 @@
                     "repo_type": "rpm",
                     "repoid": "almalinux9-extras",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -307,7 +323,8 @@
                     "repo_type": "rpm",
                     "repoid": "almalinux9-rt",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -319,7 +336,8 @@
                     "repo_type": "rpm",
                     "repoid": "almalinux9-nfv",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -331,7 +349,8 @@
                     "repo_type": "rpm",
                     "repoid": "almalinux9-sap",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -343,7 +362,8 @@
                     "repo_type": "rpm",
                     "repoid": "almalinux9-saphana",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -355,7 +375,8 @@
                     "repo_type": "rpm",
                     "repoid": "cl-channel",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -367,7 +388,8 @@
                     "repo_type": "rpm",
                     "repoid": "cloudlinux8-baseos",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -379,7 +401,8 @@
                     "repo_type": "rpm",
                     "repoid": "cloudlinux8-appstream",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -391,7 +414,8 @@
                     "repo_type": "rpm",
                     "repoid": "cloudlinux8-powertools",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -403,7 +427,8 @@
                     "repo_type": "rpm",
                     "repoid": "cloudlinux8-elevate",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -415,7 +440,8 @@
                     "repo_type": "rpm",
                     "repoid": "cloudlinux9-baseos",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -427,7 +453,8 @@
                     "repo_type": "rpm",
                     "repoid": "cloudlinux9-appstream",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -439,7 +466,8 @@
                     "repo_type": "rpm",
                     "repoid": "cloudlinux9-channel",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "cloudlinux"
                 }
             ]
         }

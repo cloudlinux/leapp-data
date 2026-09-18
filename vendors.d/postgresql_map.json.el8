@@ -1,6 +1,6 @@
 {
     "datetime": "202306191746Z",
-    "version_format": "1.2.0",
+    "version_format": "1.3.0",
     "mapping": [
         {
             "source_major_version": "7",
@@ -78,7 +78,8 @@
                     "repoid": "pgdg-common",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         },
@@ -90,7 +91,8 @@
                     "repoid": "pgdg96",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         },
@@ -102,7 +104,8 @@
                     "repoid": "pgdg10",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         },
@@ -114,7 +117,8 @@
                     "repoid": "pgdg15",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         },
@@ -126,7 +130,8 @@
                     "repoid": "pgdg14",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         },
@@ -138,7 +143,8 @@
                     "repoid": "pgdg13",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         },
@@ -150,7 +156,8 @@
                     "repoid": "pgdg12",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         },
@@ -162,7 +169,8 @@
                     "repoid": "pgdg11",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         },
@@ -174,7 +182,8 @@
                     "repoid": "el8-pgdg-common",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         },
@@ -186,7 +195,8 @@
                     "repoid": "el8-pgdg96",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         },
@@ -198,7 +208,8 @@
                     "repoid": "el8-pgdg10",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         },
@@ -210,7 +221,8 @@
                     "repoid": "el8-pgdg15",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         },
@@ -222,7 +234,8 @@
                     "repoid": "el8-pgdg14",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         },
@@ -234,7 +247,8 @@
                     "repoid": "el8-pgdg13",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         },
@@ -246,7 +260,8 @@
                     "repoid": "el8-pgdg12",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         },
@@ -258,7 +273,8 @@
                     "repoid": "el8-pgdg11",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         },
@@ -270,7 +286,8 @@
                     "repoid": "el8-pgdg-centos8-sysupdates",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         },
@@ -282,7 +299,8 @@
                     "repoid": "el8-pgdg-rhel8-extras",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         }

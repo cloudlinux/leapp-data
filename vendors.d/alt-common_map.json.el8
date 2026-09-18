@@ -1,6 +1,6 @@
 {
     "datetime": "202306191746Z",
-    "version_format": "1.2.0",
+    "version_format": "1.3.0",
     "mapping": [
         {
             "source_major_version": "7",
@@ -24,7 +24,8 @@
                     "repoid": "alt-common",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         },
@@ -36,7 +37,8 @@
                     "repoid": "el8-alt-common",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
                 }
             ]
         }

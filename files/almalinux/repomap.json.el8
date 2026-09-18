@@ -1,6 +1,6 @@
 {
     "datetime": "202407161513Z",
-    "version_format": "1.2.0",
+    "version_format": "1.3.0",
     "provided_data_streams": [
         "3.0"
     ],
@@ -193,7 +193,8 @@
                     "repo_type": "rpm",
                     "repoid": "base",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -205,7 +206,8 @@
                     "major_version": "8",
                     "repo_type": "rpm",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -217,7 +219,8 @@
                     "repo_type": "rpm",
                     "repoid": "almalinux8-appstream",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -229,7 +232,8 @@
                     "repoid": "almalinux8-powertools",
                     "repo_type": "rpm",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -241,7 +245,8 @@
                     "repo_type": "rpm",
                     "repoid": "almalinux8-ha",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -253,7 +258,8 @@
                     "repo_type": "rpm",
                     "repoid": "almalinux8-resilientstorage",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -265,7 +271,8 @@
                     "repo_type": "rpm",
                     "repoid": "updates",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -277,7 +284,8 @@
                     "repo_type": "rpm",
                     "repoid": "extras",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -289,7 +297,8 @@
                     "repo_type": "rpm",
                     "repoid": "almalinux8-extras",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -301,7 +310,8 @@
                     "repo_type": "rpm",
                     "repoid": "almalinux8-nfv",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -313,7 +323,8 @@
                     "repo_type": "rpm",
                     "repoid": "almalinux8-sap",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -325,7 +336,8 @@
                     "repo_type": "rpm",
                     "repoid": "almalinux8-saphana",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -337,7 +349,8 @@
                     "repo_type": "rpm",
                     "repoid": "centos7-els",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -349,7 +362,8 @@
                     "repo_type": "rpm",
                     "repoid": "centos7-els-testing",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -361,7 +375,8 @@
                     "repo_type": "rpm",
                     "repoid": "centos7els-rollout-1",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -373,7 +388,8 @@
                     "repo_type": "rpm",
                     "repoid": "centos7els-rollout-1-bypass",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -385,7 +401,8 @@
                     "repo_type": "rpm",
                     "repoid": "centos7els-rollout-2",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -397,7 +414,8 @@
                     "repo_type": "rpm",
                     "repoid": "centos7els-rollout-2-bypass",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -409,7 +427,8 @@
                     "repo_type": "rpm",
                     "repoid": "centos7els-rollout-3",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -421,7 +440,8 @@
                     "repo_type": "rpm",
                     "repoid": "centos7els-rollout-3-bypass",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -433,7 +453,8 @@
                     "repo_type": "rpm",
                     "repoid": "centos7els-rollout-4",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -445,7 +466,8 @@
                     "repo_type": "rpm",
                     "repoid": "centos7els-rollout-4-bypass",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -457,7 +479,8 @@
                     "repo_type": "rpm",
                     "repoid": "centos7els-rollout-5",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -469,7 +492,8 @@
                     "repo_type": "rpm",
                     "repoid": "centos7els-rollout-5-bypass",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -481,7 +505,8 @@
                     "repo_type": "rpm",
                     "repoid": "centos7els-rollout-6",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
         },
@@ -493,9 +518,10 @@
                     "repo_type": "rpm",
                     "repoid": "centos7els-rollout-6-bypass",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "almalinux"
                 }
             ]
-        }        
+        }
     ]
 }
