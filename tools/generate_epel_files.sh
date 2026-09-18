@@ -24,6 +24,12 @@ os_repos["eurolinux8"]="certify-appstream certify-crb certify-baseos"
 os_repos["oraclelinux8"]="ol9_appstream ol9_codeready_builder ol9_baseos"
 os_repos["rocky8"]="rocky9-appstream rocky9-crb rocky9-baseos"
 
+# CloudLinux 10 takes its EL base content from AlmaLinux 10, the same way
+# CloudLinux 9 does from AlmaLinux 9. There is no {powertools} on 10 - the
+# repository is crb, and has been since 9.
+os_repos["almalinux9"]="almalinux10-appstream almalinux10-crb almalinux10-baseos"
+os_repos["centos9"]="centos10-appstream centos10-crb centos10-baseos"
+
 declare -A os_name
 os_name["almalinux"]="AlmaLinux"
 os_name["centos"]="CentOS"
@@ -36,6 +42,8 @@ if [[ $major_ver -eq 7 ]]; then
     epel_map_file="${root_dir}/vendors.d/epel_map.json_template.el8"
 elif [[ $major_ver -eq 8 ]]; then
     epel_map_file="${root_dir}/vendors.d/epel_map.json_template.el9"
+elif [[ $major_ver -eq 9 ]]; then
+    epel_map_file="${root_dir}/vendors.d/epel_map.json_template.el10"
 else
     echo "Unknown OS version"
     exit 1

@@ -8,6 +8,11 @@ Two contracts, and a file is checked against whichever apply to it:
   with "Detected outdated Leapp data assets". Only the major is compared.
 * Repomap files additionally have to satisfy RepoMapData.
 
+With --repo-file, a repomap is also cross-checked against the
+leapp_upgrade_repositories.repo that ships beside it: every target repository the
+map names has to be defined there, or leapp cannot set it up and the packages
+mapped onto it are simply unreachable.
+
 The repomap half mirrors RepoMapData.load_from_dict in leapp-repository
 (repos/system_upgrade/common/libraries/repomaputils.py). Anything this checker
 rejects would make the repositoriesmapping actor inhibit the upgrade with
@@ -128,7 +133,41 @@ def _check_distro_consistency(data, expected_distro, problems):
         )
 
 
-def check_file(path, expected_distro=None):
+def _repoids_in_repo_file(path):
+    with open(path) as fp:
+        return {line.strip()[1:-1] for line in fp if line.strip().startswith('[') and line.strip().endswith(']')}
+
+
+def _check_targets_are_defined(data, repo_file, problems):
+    """Every target repository the mapping names must exist in the .repo file."""
+    defined = _repoids_in_repo_file(repo_file)
+    repoid_of_pesid = {}
+    for fam in data.get('repositories', []):
+        for ent in fam.get('entries', []):
+            repoid_of_pesid.setdefault(fam.get('pesid'), ent.get('repoid'))
+
+    targets = set()
+    for mapping in data.get('mapping', []):
+        for ent in mapping.get('entries', []):
+            targets.update(ent.get('target') or [])
+
+    for pesid in sorted(targets):
+        repoid = repoid_of_pesid.get(pesid, pesid)
+        if repoid not in defined:
+            problems.append(
+                'mapping targets pesid {!r} (repoid {!r}), which {} does not define'.format(
+                    pesid, repoid, repo_file
+                )
+            )
+
+    unused = defined - {repoid_of_pesid.get(p, p) for p in targets}
+    for repoid in sorted(unused):
+        problems.append(
+            '{} defines [{}], which no mapping targets'.format(repo_file, repoid)
+        )
+
+
+def check_file(path, expected_distro=None, repo_file=None):
     """Return a list of problems; empty means the file is loadable by leapp."""
     try:
         with open(path) as fp:
@@ -143,13 +182,15 @@ def check_file(path, expected_distro=None):
         pesids = _check_repositories(data, problems)
         _check_mapping(data, pesids, problems)
         _check_distro_consistency(data, expected_distro, problems)
+        if repo_file:
+            _check_targets_are_defined(data, repo_file, problems)
     return problems
 
 
 def main(args):
     failed = 0
     for path in args.path:
-        problems = check_file(path, args.distro)
+        problems = check_file(path, args.distro, args.repo_file)
         if problems:
             failed += 1
             print('FAIL {}'.format(path))
@@ -166,5 +207,9 @@ if __name__ == '__main__':
     parser.add_argument(
         '--distro',
         help="the distro every entry in these files should claim, e.g. 'cloudlinux'",
+    )
+    parser.add_argument(
+        '--repo-file',
+        help='a leapp_upgrade_repositories.repo to cross-check the mapping targets against',
     )
     exit(main(parser.parse_args()))

@@ -5,7 +5,7 @@
 
 Name:		leapp-data-%{dist_name}
 Version:	0.3
-Release:	9%{?dist}.%{pes_events_build_date}
+Release:	10%{?dist}.%{pes_events_build_date}
 Summary:	data for migrating tool
 Group:		Applications/Databases
 License:	ASL 2.0
@@ -20,6 +20,9 @@ BuildRequires: python3
 BuildRequires: python36-jsonschema
 %endif
 %if 0%{?rhel} == 8
+BuildRequires: python3-jsonschema
+%endif
+%if 0%{?rhel} == 9
 BuildRequires: python3-jsonschema
 %endif
 
@@ -40,6 +43,10 @@ make install PREFIX=%{buildroot}
 
 %files
 %doc LICENSE NOTICE README.md
+%if 0%{?rhel} == 9
+%{_sysconfdir}/leapp/repos.d/system_upgrade/common/files/rpm-gpg/10/
+%endif
+
 %if 0%{?rhel} == 8
 %{_sysconfdir}/leapp/repos.d/system_upgrade/common/files/rpm-gpg/9/
 %endif
@@ -52,6 +59,13 @@ make install PREFIX=%{buildroot}
 
 
 %changelog
+
+* Thu Sep 18 2026 Roman Prilipskii <rprilipskii@cloudlinux.com> - 0.3-10.cloudlinux
+- CLOS-7051: Add CloudLinux 9 to CloudLinux 10 upgrade data - repository map, target repositories and the AlmaLinux 10 signing key
+- Move repository mapping data to format 1.3.0, required by leapp-repository 0.24.0, which adds a mandatory 'distro' field to every repository entry
+- Advertise data stream 4.0 on every asset, which leapp-repository 0.24.0 consumes; without it the upgrade is inhibited as "outdated Leapp data assets"
+- Fix the CloudLinux 7 to 8 map targeting almalinux8-ha, a repository no target repository file defines, leaving HighAvailability content unreachable
+- Build vendors with no data for the target version are skipped rather than installed from files that do not exist
 
 * Sun May 17 2026 Roman Prilipskii <rprilipskii@cloudlinux.com> - 0.3-9.cloudlinux
 - CLOS-4056: Add CloudLinux SWNG repository entries to el8/el9 leapp upgrade and repomap data

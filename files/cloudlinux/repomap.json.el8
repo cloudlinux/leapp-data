@@ -44,7 +44,7 @@
                         "almalinux8-baseos",
                         "almalinux8-appstream",
                         "almalinux8-powertools",
-                        "almalinux8-ha",
+                        "almalinux8-highavailability",
                         "almalinux8-resilientstorage"
                     ]
                 },
@@ -54,7 +54,7 @@
                         "almalinux8-baseos",
                         "almalinux8-appstream",
                         "almalinux8-powertools",
-                        "almalinux8-ha",
+                        "almalinux8-highavailability",
                         "almalinux8-resilientstorage"
                     ]
                 },
@@ -242,12 +242,12 @@
             ]
         },
         {
-            "pesid": "almalinux8-ha",
+            "pesid": "almalinux8-highavailability",
             "entries": [
                 {
                     "major_version": "8",
                     "repo_type": "rpm",
-                    "repoid": "almalinux8-ha",
+                    "repoid": "almalinux8-highavailability",
                     "arch": "x86_64",
                     "channel": "ga",
                     "distro": "cloudlinux"

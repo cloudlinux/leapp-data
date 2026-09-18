@@ -39,18 +39,30 @@ core:
 	done
 
 	# (oshyshatsky): can we just use common vendors.d?
+	# A vendor with no data for this target version is not mapped at all rather
+	# than mapped onto repositories that do not exist for it - cloudlinux_ea4 has
+	# no el10 counterpart, for instance, because cPanel does not support CL10.
 	@for vendor in $(CLOUDLINUX_VENDORS); do \
-		install -D $(CLOUDLINUX_VENDORS_DIR)/$${vendor}.repo.el$(DIST_TARGET_VERSION) \
+		src=$(CLOUDLINUX_VENDORS_DIR)/$${vendor}_map.json.el$(DIST_TARGET_VERSION); \
+		if [ ! -f "$${src}" ]; then \
+			echo "  skipping vendor $${vendor}: no data for el$(DIST_TARGET_VERSION)"; \
+			continue; \
+		fi; \
+		install -D $${src} $(VENDORS_DIR)/$${vendor}_map.json; \
+		[ -f $(CLOUDLINUX_VENDORS_DIR)/$${vendor}.repo.el$(DIST_TARGET_VERSION) ] && \
+			install -D $(CLOUDLINUX_VENDORS_DIR)/$${vendor}.repo.el$(DIST_TARGET_VERSION) \
 				$(VENDORS_DIR)/$${vendor}.repo; \
-		install -D $(CLOUDLINUX_VENDORS_DIR)/$${vendor}.gpg.el$(DIST_TARGET_VERSION) \
+		[ -f $(CLOUDLINUX_VENDORS_DIR)/$${vendor}.gpg.el$(DIST_TARGET_VERSION) ] && \
+			install -D $(CLOUDLINUX_VENDORS_DIR)/$${vendor}.gpg.el$(DIST_TARGET_VERSION) \
 				$(VENDORS_GPG_DIR)/$${vendor}.gpg; \
-		install -D $(CLOUDLINUX_VENDORS_DIR)/$${vendor}_map.json.el$(DIST_TARGET_VERSION) \
-				$(VENDORS_DIR)/$${vendor}_map.json; \
+		true; \
 	done
 
-	find $(LEAPP_BUILD_DIR) -name '*.el?' -delete
+	find $(LEAPP_BUILD_DIR) \( -name '*.el[0-9]' -o -name '*.el[0-9][0-9]' \) -delete
 
-	python3 tools/repomap_check.py --distro $(DIST_NAME) $(TARGET_FILES_DIR)/repomap.json
+	python3 tools/repomap_check.py --distro $(DIST_NAME) \
+		--repo-file $(TARGET_FILES_DIR)/leapp_upgrade_repositories.repo \
+		$(TARGET_FILES_DIR)/repomap.json
 
 vendors:
 	mkdir -p $(VENDORS_DIR)
@@ -60,15 +72,22 @@ vendors:
 	bash tools/generate_epel_files.sh "almalinux" "$(DIST_VERSION)" "$(buildroot)$(_sysconfdir)/leapp/files"
 
 	@for vendor in $(VENDORS); do \
-		install -D $(VENDORS_DIR)/$${vendor}.repo.el$(DIST_TARGET_VERSION) \
+		src=$(VENDORS_DIR)/$${vendor}_map.json.el$(DIST_TARGET_VERSION); \
+		if [ ! -f "$${src}" ] && [ ! -f $(VENDORS_DIR)/$${vendor}_map.json ]; then \
+			echo "  skipping vendor $${vendor}: no data for el$(DIST_TARGET_VERSION)"; \
+			continue; \
+		fi; \
+		[ -f "$${src}" ] && install -D $${src} $(VENDORS_DIR)/$${vendor}_map.json; \
+		[ -f $(VENDORS_DIR)/$${vendor}.repo.el$(DIST_TARGET_VERSION) ] && \
+			install -D $(VENDORS_DIR)/$${vendor}.repo.el$(DIST_TARGET_VERSION) \
 				$(VENDORS_DIR)/$${vendor}.repo; \
-		install -D $(VENDORS_GPG_DIR)/$${vendor}.gpg.el$(DIST_TARGET_VERSION) \
+		[ -f $(VENDORS_GPG_DIR)/$${vendor}.gpg.el$(DIST_TARGET_VERSION) ] && \
+			install -D $(VENDORS_GPG_DIR)/$${vendor}.gpg.el$(DIST_TARGET_VERSION) \
 				$(VENDORS_GPG_DIR)/$${vendor}.gpg; \
-		install -D $(VENDORS_DIR)/$${vendor}_map.json.el$(DIST_TARGET_VERSION) \
-				$(VENDORS_DIR)/$${vendor}_map.json; \
+		true; \
 	done
 
-	find $(LEAPP_BUILD_DIR) -name '*.el?' -delete
+	find $(LEAPP_BUILD_DIR) \( -name '*.el[0-9]' -o -name '*.el[0-9][0-9]' \) -delete
 
 	# vendors.d/ is shared source built once per distro package, so its repomap
 	# entries carry a {distro} placeholder rather than a hardcoded name. leapp

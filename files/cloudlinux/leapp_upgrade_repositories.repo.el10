@@ -1,0 +1,107 @@
+# AlmaLinux repositories.
+# Taken from AlmaLinux's own el10 file - CloudLinux 10 takes its EL base content
+# from AlmaLinux 10, the same way CloudLinux 9 does from AlmaLinux 9.
+#
+# Note there is no almalinux10-resilientstorage: AlmaLinux dropped that repository
+# in 10, so unlike the el9 file this one has no counterpart for it.
+
+[almalinux10-baseos]
+name=AlmaLinux $releasever - BaseOS
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/$releasever/baseos
+# baseurl=https://repo.almalinux.org/almalinux/$releasever/BaseOS/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/10/RPM-GPG-KEY-AlmaLinux-10
+
+[almalinux10-appstream]
+name=AlmaLinux $releasever - AppStream
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/$releasever/appstream
+# baseurl=https://repo.almalinux.org/almalinux/$releasever/AppStream/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/10/RPM-GPG-KEY-AlmaLinux-10
+
+[almalinux10-crb]
+name=AlmaLinux $releasever - CRB
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/$releasever/crb
+# baseurl=https://repo.almalinux.org/almalinux/$releasever/CRB/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/10/RPM-GPG-KEY-AlmaLinux-10
+
+[almalinux10-highavailability]
+name=AlmaLinux $releasever - HighAvailability
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/$releasever/ha
+# baseurl=https://repo.almalinux.org/almalinux/$releasever/HighAvailability/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/10/RPM-GPG-KEY-AlmaLinux-10
+
+[almalinux10-extras]
+name=AlmaLinux $releasever - Extras
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/$releasever/extras
+# baseurl=https://repo.almalinux.org/almalinux/$releasever/extras/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/10/RPM-GPG-KEY-AlmaLinux-10
+
+[almalinux10-sap]
+name=AlmaLinux $releasever - SAP
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/$releasever/sap
+# baseurl=https://repo.almalinux.org/almalinux/$releasever/SAP/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/10/RPM-GPG-KEY-AlmaLinux-10
+
+[almalinux10-saphana]
+name=AlmaLinux $releasever - SAPHANA
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/$releasever/saphana
+# baseurl=https://repo.almalinux.org/almalinux/$releasever/SAPHANA/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/10/RPM-GPG-KEY-AlmaLinux-10
+
+[almalinux10-rt]
+name=AlmaLinux $releasever - RT
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/$releasever/rt?arch=x86_64
+# baseurl=https://repo.almalinux.org/almalinux/$releasever/RT/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/10/RPM-GPG-KEY-AlmaLinux-10
+
+[almalinux10-nfv]
+name=AlmaLinux $releasever - NFV
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/$releasever/nfv?arch=x86_64
+# baseurl=https://repo.almalinux.org/almalinux/$releasever/NFV/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/rpm-gpg/10/RPM-GPG-KEY-AlmaLinux-10
+
+# CL repositories used during migration.
+# Enabled so CloudLinux-specific packages are available when the source system
+# is on the no-auth scheme and CLN is no longer serving them.
+
+# cloudlinux10-channel is the whole CloudLinux 10 package set. Unlike CloudLinux
+# 9 there is no BaseOS/AppStream split to fall back on - repo.cloudlinux.com
+# serves /cloudlinux/10/cloudlinux-x86_64-server-10/ and returns 404 for
+# /cloudlinux/10/BaseOS/ and /cloudlinux/10/AppStream/ - so this single channel
+# is the only source of CloudLinux content for the target.
+#
+# The repoid is deliberately "cloudlinux10-channel" rather than "cl-channel", so
+# it cannot clash with the source system's own cl-channel from
+# /etc/yum.repos.d/cl.repo, which is carried into the target upgrade container
+# and would otherwise trigger the "YUM/DNF repository defined multiple times"
+# inhibitor. Same reasoning as cloudlinux9-channel in the el9 file.
+#
+# The mirrorlist names the major version literally instead of using $releasever,
+# which is what the el9 file does. Minor-version routing is not populated for 10:
+# cl-mirrors/cloudlinux-x86_64-server-10.0 (and .1, .2) resolve to a mirror root
+# with no path at all, so a $releasever that expands to a minor version yields a
+# broken repository. Revisit once minor routing exists for 10.
+[cloudlinux10-channel]
+name=CloudLinux 10 - SWNG mirrorlist
+mirrorlist=https://repo.cloudlinux.com/cloudlinux/mirrorlists/cl-mirrors/cloudlinux-x86_64-server-10
+# baseurl=https://repo.cloudlinux.com/cloudlinux/10/cloudlinux-x86_64-server-10/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
