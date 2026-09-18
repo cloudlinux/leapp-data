@@ -85,6 +85,12 @@ test:
 	python3 tests/validate_json.py tests/pes-events-schema.json $(JSON_FILES)
 	python3 tests/validate_ids.py $(JSON_FILES)
 
+	# Every asset leapp reads must advertise the data stream major it consumes,
+	# or checkconsumedassets inhibits the upgrade as "outdated". Checked over the
+	# built tree so it covers what actually ships, generated files included.
+	grep -rl provided_data_streams $(LEAPP_BUILD_DIR)/files \
+		| xargs -r python3 tools/repomap_check.py
+
 	# todo: disabled temporary
 	# python3 tests/check_debranding.py $(buildroot)$(_sysconfdir)/leapp/files/pes-events.json
 

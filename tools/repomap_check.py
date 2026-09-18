@@ -1,7 +1,14 @@
 """
-Check that repomap files satisfy the contract leapp's RepoMapData imposes on them.
+Check that leapp data files satisfy the contracts leapp imposes on them.
 
-Mirrors RepoMapData.load_from_dict in leapp-repository
+Two contracts, and a file is checked against whichever apply to it:
+
+* Every asset leapp reads has to advertise a provided_data_streams major that
+  matches the stream leapp consumes, or checkconsumedassets inhibits the upgrade
+  with "Detected outdated Leapp data assets". Only the major is compared.
+* Repomap files additionally have to satisfy RepoMapData.
+
+The repomap half mirrors RepoMapData.load_from_dict in leapp-repository
 (repos/system_upgrade/common/libraries/repomaputils.py). Anything this checker
 rejects would make the repositoriesmapping actor inhibit the upgrade with
 "The repository mapping file is invalid", which is a much more expensive place
@@ -14,10 +21,18 @@ VERSION_FORMAT and REQUIRED_ENTRY_FIELDS below are the parts that drift.
 
 import argparse
 import json
+import re
 
 # Must equal RepoMapData.VERSION_FORMAT. leapp compares it with ==, not >=, so a
 # file one revision behind is rejected outright rather than read leniently.
 VERSION_FORMAT = '1.3.0'
+
+# Must match the major of CONSUMED_DATA_STREAM_ID in leapp-repository
+# (repos/system_upgrade/common/libraries/config/__init__.py). Only the major is
+# compared, and an asset may advertise several streams, so older ones are kept
+# alongside rather than replaced - that keeps the data readable by an older leapp
+# that is still installed next to it.
+CONSUMED_DATA_STREAM_MAJOR = 4
 
 # Keys RepoMapData.add_repository indexes directly. A missing one is a KeyError
 # during the upgrade, not a validation message. 'rhui' is read with .get() and so
@@ -27,6 +42,27 @@ REQUIRED_ENTRY_FIELDS = ('repoid', 'channel', 'repo_type', 'arch', 'major_versio
 # A template that the build substitutes; it is not a literal value, so files
 # carrying it are checked for shape but not for the distro's spelling.
 TEMPLATE_PLACEHOLDER = '{distro}'
+
+
+def _check_data_streams(data, problems):
+    streams = data.get('provided_data_streams')
+    if streams is None:
+        # Predates asset versioning. leapp treats it as outdated, but so does the
+        # file's own absence of a claim - flagging it here would be noise for the
+        # files that genuinely have no header.
+        return
+    majors = set()
+    for stream in streams:
+        if not re.match(r'^\d+\.\d+$', str(stream)):
+            problems.append('provided_data_streams contains {!r}, which is not MAJOR.MINOR'.format(stream))
+            continue
+        majors.add(int(str(stream).split('.', 1)[0]))
+    if majors and CONSUMED_DATA_STREAM_MAJOR not in majors:
+        problems.append(
+            'provided_data_streams {} has no stream with major {}, which leapp consumes'.format(
+                streams, CONSUMED_DATA_STREAM_MAJOR
+            )
+        )
 
 
 def _check_version_format(data, problems):
@@ -101,10 +137,12 @@ def check_file(path, expected_distro=None):
         return ['not valid JSON: {}'.format(err)]
 
     problems = []
-    _check_version_format(data, problems)
-    pesids = _check_repositories(data, problems)
-    _check_mapping(data, pesids, problems)
-    _check_distro_consistency(data, expected_distro, problems)
+    _check_data_streams(data, problems)
+    if 'repositories' in data or 'mapping' in data:
+        _check_version_format(data, problems)
+        pesids = _check_repositories(data, problems)
+        _check_mapping(data, pesids, problems)
+        _check_distro_consistency(data, expected_distro, problems)
     return problems
 
 
