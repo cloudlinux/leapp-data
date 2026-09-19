@@ -44,15 +44,15 @@ make install PREFIX=%{buildroot}
 %files
 %doc LICENSE NOTICE README.md
 %if 0%{?rhel} == 9
-%{_sysconfdir}/leapp/repos.d/system_upgrade/common/files/rpm-gpg/10/
+%{_sysconfdir}/leapp/repos.d/system_upgrade/common/files/distro/%{dist_name}/rpm-gpg/10/
 %endif
 
 %if 0%{?rhel} == 8
-%{_sysconfdir}/leapp/repos.d/system_upgrade/common/files/rpm-gpg/9/
+%{_sysconfdir}/leapp/repos.d/system_upgrade/common/files/distro/%{dist_name}/rpm-gpg/9/
 %endif
 
 %if 0%{?rhel} == 7
-%{_sysconfdir}/leapp/repos.d/system_upgrade/common/files/rpm-gpg/8/
+%{_sysconfdir}/leapp/repos.d/system_upgrade/common/files/distro/%{dist_name}/rpm-gpg/8/
 %endif
 %{_sysconfdir}/leapp/files/*
 

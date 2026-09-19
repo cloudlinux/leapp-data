@@ -24,7 +24,7 @@ TARGET_FILES_DIR = $(LEAPP_BUILD_DIR)/files
 
 CLOUDLINUX_VENDORS_DIR = $(SOURCE_FILES_DIR)/vendors.d
 
-GPG_DIR_RHEL = $(LEAPP_BUILD_DIR)/repos.d/system_upgrade/common/files/rpm-gpg/$(DIST_TARGET_VERSION)/
+GPG_DIR_RHEL = $(LEAPP_BUILD_DIR)/repos.d/system_upgrade/common/files/distro/$(DIST_NAME)/rpm-gpg/$(DIST_TARGET_VERSION)/
 
 all: vendors core
 
