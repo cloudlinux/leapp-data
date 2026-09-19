@@ -11,6 +11,11 @@ did not - dnf then failed the *target* transaction with
 which names neither the repofile nor the package it was about, and only happens
 once a real upgrade reaches the target repositories.
 
+The same shape bites the vendor keys: they are installed per target version from
+a <name>.gpg.el<major> source, so a vendor with no file for a new target simply
+ships no key, and leapp reports "Failed to read GPG keys from provided key files"
+naming a path rather than a missing build input.
+
 Paths under /etc/pki are the source system's own and are not checked: they are
 installed by cloudlinux-release, not by this package.
 """
@@ -22,6 +27,7 @@ import sys
 
 GPGKEY_RE = re.compile(r'^\s*gpgkey\s*=\s*(.+?)\s*$', re.MULTILINE)
 LEAPP_PREFIX = '/etc/leapp/'
+MIN_KEY_BYTES = 40  # shorter than the shortest armoured header line
 
 
 def iter_leapp_gpgkeys(repofile):
@@ -45,10 +51,12 @@ def main(buildroot, repofiles):
             # under buildroot.
             on_disk = os.path.join(buildroot, path.lstrip('/'))
             if not os.path.isfile(on_disk):
-                missing.append((repofile, path))
+                missing.append((repofile, path, 'not installed by this package'))
+            elif os.path.getsize(on_disk) < MIN_KEY_BYTES:
+                missing.append((repofile, path, 'is installed but holds no key'))
 
-    for repofile, path in missing:
-        print('MISSING  {0}: gpgkey {1} is not installed by this package'.format(repofile, path))
+    for repofile, path, why in missing:
+        print('MISSING  {0}: gpgkey {1} {2}'.format(repofile, path, why))
     if missing:
         return 1
     print('OK   {0} leapp-installed gpgkey path(s) in {1} repofile(s)'.format(checked, len(repofiles)))
