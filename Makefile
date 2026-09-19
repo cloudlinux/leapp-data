@@ -34,6 +34,19 @@ core:
 	install -D files/$(DIST_NAME)/leapp_upgrade_repositories.repo.el${DIST_TARGET_VERSION} $(LEAPP_BUILD_DIR)/files/leapp_upgrade_repositories.repo
 	install -D files/$(DIST_NAME)/repomap.json.el${DIST_TARGET_VERSION} $(LEAPP_BUILD_DIR)/files/repomap.json
 
+	# leapp reads exactly one unconditional PES file, so upstream's events and ours
+	# have to end up in one pes-events.json - but keeping them in one *source* file
+	# is what makes rebasing from upstream archaeology. They are composed here
+	# instead, from a verbatim upstream layer and a small CloudLinux overlay.
+	@if [ -f $(SOURCE_FILES_DIR)/pes-events-upstream.json ]; then \
+		python3 tools/compose_pes.py \
+			$(SOURCE_FILES_DIR)/pes-events-upstream.json \
+			$(SOURCE_FILES_DIR)/pes-events-cloudlinux.json \
+			$(TARGET_FILES_DIR)/pes-events.json || exit 1; \
+		rm -f $(TARGET_FILES_DIR)/pes-events-upstream.json \
+			$(TARGET_FILES_DIR)/pes-events-cloudlinux.json; \
+	fi
+
 	@for key in $(GPG_KEY); do \
 		install -D files/rpm-gpg/$${key} $(GPG_DIR_RHEL)/$${key}; \
 	done
@@ -63,6 +76,11 @@ core:
 	python3 tools/repomap_check.py --distro $(DIST_NAME) \
 		--repo-file $(TARGET_FILES_DIR)/leapp_upgrade_repositories.repo \
 		$(TARGET_FILES_DIR)/repomap.json
+
+	# Renumber over the built tree rather than the source. Event ids are an
+	# artefact of concatenation order, so committing them means every PES change
+	# churns every other PES file - which is noise that hides the real diff.
+	python3 rebuild_ids.py $(TARGET_FILES_DIR) $(VENDORS_DIR)
 
 vendors:
 	mkdir -p $(VENDORS_DIR)

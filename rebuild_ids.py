@@ -55,7 +55,9 @@ class PesIdRebuilder():
 
         for directory_path in directory_list:
             for filename in os.listdir(directory_path):
-                if "pes" in filename:
+                # The un-composed layers live beside the composed file in the
+                # source tree; only the composed one is renumbered and shipped.
+                if "pes" in filename and "pes-events-" not in filename:
                     file_path = os.path.join(directory_path, filename)
                     data = load_json(file_path)
                     new_json_file = JSONFile(file_path, data)
@@ -98,13 +100,20 @@ class PesIdRebuilder():
                     out_packageset["set_id"] = 0
 
 def main():
+    import sys
+
     rebuilder = PesIdRebuilder()
 
-    # By default, process the CloudLinux-related PES files.
-    os_directory_path = os.path.join(os.path.dirname(__file__), "files/cloudlinux")
-    os_vendors_directory_path = os.path.join(os.path.dirname(__file__), "files/cloudlinux/vendors.d")
-    common_vendors_directory_path = os.path.join(os.path.dirname(__file__), "vendors.d")
-    directory_list = [os_directory_path, os_vendors_directory_path, common_vendors_directory_path]
+    if len(sys.argv) > 1:
+        # Directories given on the command line - this is how the build renumbers
+        # the composed tree, so ids never have to be committed at all.
+        directory_list = [d for d in sys.argv[1:] if os.path.isdir(d)]
+    else:
+        # By default, process the CloudLinux-related PES files.
+        os_directory_path = os.path.join(os.path.dirname(__file__), "files/cloudlinux")
+        os_vendors_directory_path = os.path.join(os.path.dirname(__file__), "files/cloudlinux/vendors.d")
+        common_vendors_directory_path = os.path.join(os.path.dirname(__file__), "vendors.d")
+        directory_list = [os_directory_path, os_vendors_directory_path, common_vendors_directory_path]
 
     rebuilder.load_json_files(directory_list)
     rebuilder.rebuild_ids()
