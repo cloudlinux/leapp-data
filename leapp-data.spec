@@ -1,4 +1,4 @@
-%global pes_events_build_date 20240821
+%global pes_events_build_date 20260919
 
 %define dist_list almalinux centos eurolinux oraclelinux rocky cloudlinux
 %define conflict_dists() %(for i in almalinux centos eurolinux oraclelinux rocky cloudlinux; do if [ "${i}" != "%{dist_name}" ]; then echo -n "leapp-data-${i} "; fi; done)
@@ -62,6 +62,7 @@ make install PREFIX=%{buildroot}
 
 * Thu Sep 18 2026 Roman Prilipskii <rprilipskii@cloudlinux.com> - 0.3-10.cloudlinux
 - CLOS-7051: Add CloudLinux 9 to CloudLinux 10 upgrade data - repository map, target repositories and the AlmaLinux 10 signing key
+- CLOS-7051: Rebase PES data on AlmaLinux's, which brings CloudLinux 9 to 10 package events from 193 to 2428 and picks up two years of corrections to the 7 to 8 and 8 to 9 data
 - Move repository mapping data to format 1.3.0, required by leapp-repository 0.24.0, which adds a mandatory 'distro' field to every repository entry
 - Advertise data stream 4.0 on every asset, which leapp-repository 0.24.0 consumes; without it the upgrade is inhibited as "outdated Leapp data assets"
 - Fix the CloudLinux 7 to 8 map targeting almalinux8-ha, a repository no target repository file defines, leaving HighAvailability content unreachable
