@@ -128,6 +128,12 @@ test:
 	grep -rl provided_data_streams $(LEAPP_BUILD_DIR)/files \
 		| xargs -r python3 tools/repomap_check.py
 
+	# A gpgkey= path is an unchecked string: nothing ties it to where the keys
+	# are actually installed, and a stale one only shows up as a curl error in
+	# the middle of a real upgrade.
+	python3 tests/check_gpgkey_paths.py $(buildroot) \
+		$(LEAPP_BUILD_DIR)/files/leapp_upgrade_repositories.repo
+
 	# todo: disabled temporary
 	# python3 tests/check_debranding.py $(buildroot)$(_sysconfdir)/leapp/files/pes-events.json
 
