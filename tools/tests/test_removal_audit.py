@@ -97,3 +97,67 @@ def test_a_surviving_dependent_is_still_breakage():
     )
     assert [f['package'] for f in findings] == ['libdb']
     assert findings[0]['required_by'] == ['alt-cyrus-sasl-lib']
+
+
+def test_a_modulestream_scoped_removal_reports_its_scope():
+    """Upstream's php removal applies only to streams 8.1 and 8.2.
+
+    Reported without that scope it reads as "php is removed", which is false for
+    a box on 8.3 and sent a real review down a blind alley. The scope is the
+    finding: whether it matters depends entirely on which stream is installed.
+    """
+    findings = removal_audit.audit(
+        removed={'php': {'8.1', '8.2'}},
+        target_packages={'php': set(), 'mod_suphp': {'php'}},
+        suppressed=set(),
+    )
+    assert findings[0]['package'] == 'php'
+    assert findings[0]['streams'] == ['8.1', '8.2']
+
+
+def test_an_unscoped_removal_reports_no_streams():
+    findings = removal_audit.audit(
+        removed={'libnsl2': None},
+        target_packages={'libnsl2': set(), 'alt-python-internal-libs': {'libnsl2'}},
+        suppressed=set(),
+    )
+    assert findings[0]['streams'] is None
+
+
+def test_a_plain_list_of_names_still_works():
+    """Callers that do not care about streams keep working."""
+    findings = removal_audit.audit(
+        removed=['libnsl2'],
+        target_packages={'libnsl2': set(), 'alt-python-internal-libs': {'libnsl2'}},
+        suppressed=set(),
+    )
+    assert findings[0]['streams'] is None
+
+
+def test_packages_not_installed_are_skipped_when_an_inventory_is_given():
+    """Without this the audit invents decisions about packages nobody has.
+
+    LibRaw-devel, libdb-devel and libwmf-devel were all reported as pending
+    judgements when none of them was installed, so none could ever have reached
+    leapp's removal set.
+    """
+    target = {'LibRaw-devel': set(), 'LibRaw-static': {'LibRaw-devel'},
+              'libnsl2': set(), 'alt-python-internal-libs': {'libnsl2'}}
+
+    findings = removal_audit.audit(
+        removed=['LibRaw-devel', 'libnsl2'],
+        target_packages=target,
+        suppressed=set(),
+        installed={'libnsl2', 'alt-python-internal-libs'},
+    )
+    assert [f['package'] for f in findings] == ['libnsl2']
+
+
+def test_no_inventory_means_report_everything():
+    """The screen is still usable with no box to hand - it just over-reports."""
+    findings = removal_audit.audit(
+        removed=['LibRaw-devel'],
+        target_packages={'LibRaw-devel': set(), 'LibRaw-static': {'LibRaw-devel'}},
+        suppressed=set(),
+    )
+    assert [f['package'] for f in findings] == ['LibRaw-devel']
