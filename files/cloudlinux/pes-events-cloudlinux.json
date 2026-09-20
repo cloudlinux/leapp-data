@@ -32,6 +32,42 @@
                 "LibRaw"
             ],
             "reason": "Second dependency of alt-ImageMagick, and therefore of lve-stats. LibRaw-0.21.3-1.el10_0 ships in EPEL 10. Upstream both removes it and offers it as an upgrade in the same solve; the removal wins."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "libdb"
+            ],
+            "reason": "alt-cyrus-sasl-lib, alt-openldap11-servers and alt-php-internal-dba all require libdb-5.3.so, and libdb ships for el10 in alt-common. This one is not theoretical: alt-cyrus-sasl-lib was installed on a CL9 box and gone after an upgrade that otherwise looked clean."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "libdb-utils"
+            ],
+            "reason": "alt-openldap11-servers requires it, and it ships for el10 in alt-common."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "enchant"
+            ],
+            "reason": "alt-php-internal-enchant requires it - the PHP enchant extension, so a live dependency on a hosting box. Ships for el10 in EPEL 10."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "libmemcached-awesome"
+            ],
+            "reason": "gearmand requires it, and it ships for el10 in AlmaLinux AppStream."
         }
     ],
     "packageinfo": [
