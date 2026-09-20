@@ -5,6 +5,35 @@
         "3.0",
         "4.0"
     ],
+    "suppress_upstream": [
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "libnsl2"
+            ],
+            "reason": "CloudLinux 10 alt-python-internal-libs requires libnsl.so.3, and libnsl2-2.0.1-2.el10 ships in alt-common. Removing it makes alt-python-internal uninstallable, and under allow_erasing dnf then erases cloudlinux-venv, lve-utils, cagefs, alt-python27-cllib, lve-wrappers and lvemanager with it, silently."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "libwmf-lite"
+            ],
+            "reason": "lve-stats requires alt-ImageMagick, which requires libwmflite-0.2.so.7. libwmf-lite-0.2.13-6.el10_0 ships in EPEL 10, which is an enabled target repository."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "LibRaw"
+            ],
+            "reason": "Second dependency of alt-ImageMagick, and therefore of lve-stats. LibRaw-0.21.3-1.el10_0 ships in EPEL 10. Upstream both removes it and offers it as an upgrade in the same solve; the removal wins."
+        }
+    ],
     "packageinfo": [
         {
             "action": 0,
