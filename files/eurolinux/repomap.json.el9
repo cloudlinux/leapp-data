@@ -1,8 +1,9 @@
 {
     "datetime": "202204020934Z",
-    "version_format": "1.2.0",
+    "version_format": "1.3.0",
     "provided_data_streams": [
-        "3.0"
+        "3.0",
+        "4.0"
     ],
     "mapping": [
         {
@@ -51,7 +52,8 @@
                     "major_version": "8",
                     "repo_type": "rpm",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "eurolinux"
                 }
             ]
         },
@@ -63,7 +65,8 @@
                     "repo_type": "rpm",
                     "repoid": "appstream",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "eurolinux"
                 }
             ]
         },
@@ -75,7 +78,8 @@
                     "repoid": "powertools",
                     "repo_type": "rpm",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "eurolinux"
                 }
             ]
         },
@@ -87,7 +91,8 @@
                     "repo_type": "rpm",
                     "repoid": "high-availability",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "eurolinux"
                 }
             ]
         },
@@ -99,7 +104,8 @@
                     "repo_type": "rpm",
                     "repoid": "resilient-storage",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "eurolinux"
                 }
             ]
         },
@@ -111,7 +117,8 @@
                     "major_version": "9",
                     "repo_type": "rpm",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "eurolinux"
                 }
             ]
         },
@@ -123,7 +130,8 @@
                     "repo_type": "rpm",
                     "repoid": "certify-appstream-9",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "eurolinux"
                 }
             ]
         },
@@ -135,7 +143,8 @@
                     "repoid": "certify-powertools-9",
                     "repo_type": "rpm",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "eurolinux"
                 }
             ]
         },
@@ -147,7 +156,8 @@
                     "repo_type": "rpm",
                     "repoid": "high-availability-9",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "eurolinux"
                 }
             ]
         },
@@ -159,7 +169,8 @@
                     "repo_type": "rpm",
                     "repoid": "resilient-storage-9",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "eurolinux"
                 }
             ]
         }

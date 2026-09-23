@@ -24,7 +24,7 @@ TARGET_FILES_DIR = $(LEAPP_BUILD_DIR)/files
 
 CLOUDLINUX_VENDORS_DIR = $(SOURCE_FILES_DIR)/vendors.d
 
-GPG_DIR_RHEL = $(LEAPP_BUILD_DIR)/repos.d/system_upgrade/common/files/rpm-gpg/$(DIST_TARGET_VERSION)/
+GPG_DIR_RHEL = $(LEAPP_BUILD_DIR)/repos.d/system_upgrade/common/files/distro/$(DIST_NAME)/rpm-gpg/$(DIST_TARGET_VERSION)/
 
 all: vendors core
 
@@ -34,21 +34,53 @@ core:
 	install -D files/$(DIST_NAME)/leapp_upgrade_repositories.repo.el${DIST_TARGET_VERSION} $(LEAPP_BUILD_DIR)/files/leapp_upgrade_repositories.repo
 	install -D files/$(DIST_NAME)/repomap.json.el${DIST_TARGET_VERSION} $(LEAPP_BUILD_DIR)/files/repomap.json
 
+	# leapp reads exactly one unconditional PES file, so upstream's events and ours
+	# have to end up in one pes-events.json - but keeping them in one *source* file
+	# is what makes rebasing from upstream archaeology. They are composed here
+	# instead, from a verbatim upstream layer and a small CloudLinux overlay.
+	@if [ -f $(SOURCE_FILES_DIR)/pes-events-upstream.json ]; then \
+		python3 tools/compose_pes.py \
+			$(SOURCE_FILES_DIR)/pes-events-upstream.json \
+			$(SOURCE_FILES_DIR)/pes-events-cloudlinux.json \
+			$(TARGET_FILES_DIR)/pes-events.json || exit 1; \
+		rm -f $(TARGET_FILES_DIR)/pes-events-upstream.json \
+			$(TARGET_FILES_DIR)/pes-events-cloudlinux.json; \
+	fi
+
 	@for key in $(GPG_KEY); do \
 		install -D files/rpm-gpg/$${key} $(GPG_DIR_RHEL)/$${key}; \
 	done
 
 	# (oshyshatsky): can we just use common vendors.d?
+	# A vendor with no data for this target version is not mapped at all rather
+	# than mapped onto repositories that do not exist for it - cloudlinux_ea4 has
+	# no el10 counterpart, for instance, because cPanel does not support CL10.
 	@for vendor in $(CLOUDLINUX_VENDORS); do \
-		install -D $(CLOUDLINUX_VENDORS_DIR)/$${vendor}.repo.el$(DIST_TARGET_VERSION) \
+		src=$(CLOUDLINUX_VENDORS_DIR)/$${vendor}_map.json.el$(DIST_TARGET_VERSION); \
+		if [ ! -f "$${src}" ]; then \
+			echo "  skipping vendor $${vendor}: no data for el$(DIST_TARGET_VERSION)"; \
+			continue; \
+		fi; \
+		install -D $${src} $(VENDORS_DIR)/$${vendor}_map.json; \
+		[ -f $(CLOUDLINUX_VENDORS_DIR)/$${vendor}.repo.el$(DIST_TARGET_VERSION) ] && \
+			install -D $(CLOUDLINUX_VENDORS_DIR)/$${vendor}.repo.el$(DIST_TARGET_VERSION) \
 				$(VENDORS_DIR)/$${vendor}.repo; \
-		install -D $(CLOUDLINUX_VENDORS_DIR)/$${vendor}.gpg.el$(DIST_TARGET_VERSION) \
+		[ -f $(CLOUDLINUX_VENDORS_DIR)/$${vendor}.gpg.el$(DIST_TARGET_VERSION) ] && \
+			install -D $(CLOUDLINUX_VENDORS_DIR)/$${vendor}.gpg.el$(DIST_TARGET_VERSION) \
 				$(VENDORS_GPG_DIR)/$${vendor}.gpg; \
-		install -D $(CLOUDLINUX_VENDORS_DIR)/$${vendor}_map.json.el$(DIST_TARGET_VERSION) \
-				$(VENDORS_DIR)/$${vendor}_map.json; \
+		true; \
 	done
 
-	find $(LEAPP_BUILD_DIR) -name '*.el?' -delete
+	find $(LEAPP_BUILD_DIR) \( -name '*.el[0-9]' -o -name '*.el[0-9][0-9]' \) -delete
+
+	python3 tools/repomap_check.py --distro $(DIST_NAME) \
+		--repo-file $(TARGET_FILES_DIR)/leapp_upgrade_repositories.repo \
+		$(TARGET_FILES_DIR)/repomap.json
+
+	# Renumber over the built tree rather than the source. Event ids are an
+	# artefact of concatenation order, so committing them means every PES change
+	# churns every other PES file - which is noise that hides the real diff.
+	python3 rebuild_ids.py $(TARGET_FILES_DIR) $(VENDORS_DIR)
 
 vendors:
 	mkdir -p $(VENDORS_DIR)
@@ -58,23 +90,49 @@ vendors:
 	bash tools/generate_epel_files.sh "almalinux" "$(DIST_VERSION)" "$(buildroot)$(_sysconfdir)/leapp/files"
 
 	@for vendor in $(VENDORS); do \
-		install -D $(VENDORS_DIR)/$${vendor}.repo.el$(DIST_TARGET_VERSION) \
+		src=$(VENDORS_DIR)/$${vendor}_map.json.el$(DIST_TARGET_VERSION); \
+		if [ ! -f "$${src}" ] && [ ! -f $(VENDORS_DIR)/$${vendor}_map.json ]; then \
+			echo "  skipping vendor $${vendor}: no data for el$(DIST_TARGET_VERSION)"; \
+			continue; \
+		fi; \
+		[ -f "$${src}" ] && install -D $${src} $(VENDORS_DIR)/$${vendor}_map.json; \
+		[ -f $(VENDORS_DIR)/$${vendor}.repo.el$(DIST_TARGET_VERSION) ] && \
+			install -D $(VENDORS_DIR)/$${vendor}.repo.el$(DIST_TARGET_VERSION) \
 				$(VENDORS_DIR)/$${vendor}.repo; \
-		install -D $(VENDORS_GPG_DIR)/$${vendor}.gpg.el$(DIST_TARGET_VERSION) \
+		[ -f $(VENDORS_GPG_DIR)/$${vendor}.gpg.el$(DIST_TARGET_VERSION) ] && \
+			install -D $(VENDORS_GPG_DIR)/$${vendor}.gpg.el$(DIST_TARGET_VERSION) \
 				$(VENDORS_GPG_DIR)/$${vendor}.gpg; \
-		install -D $(VENDORS_DIR)/$${vendor}_map.json.el$(DIST_TARGET_VERSION) \
-				$(VENDORS_DIR)/$${vendor}_map.json; \
+		true; \
 	done
 
-	find $(LEAPP_BUILD_DIR) -name '*.el?' -delete
+	find $(LEAPP_BUILD_DIR) \( -name '*.el[0-9]' -o -name '*.el[0-9][0-9]' \) -delete
 
-	find $(VENDORS_DIR) -name '*.json' | xargs -n 1 python3 tools/repomap_check.py
+	# vendors.d/ is shared source built once per distro package, so its repomap
+	# entries carry a {distro} placeholder rather than a hardcoded name. leapp
+	# matches entries on the distro id, so a placeholder that survives to the
+	# built package is an entry that silently never matches.
+	grep -rl '{distro}' $(VENDORS_DIR) | xargs -r sed -i 's/{distro}/$(DIST_NAME)/g'
+
+	find $(VENDORS_DIR) -name '*_map.json' -print0 \
+		| xargs -0 -r python3 tools/repomap_check.py --distro $(DIST_NAME)
 
 test:
 	$(eval JSON_FILES := $(shell find $(buildroot) -path "./tests" -prune -o -name "*pes*.json*" -print0 | xargs -0 echo))
 
 	python3 tests/validate_json.py tests/pes-events-schema.json $(JSON_FILES)
 	python3 tests/validate_ids.py $(JSON_FILES)
+
+	# Every asset leapp reads must advertise the data stream major it consumes,
+	# or checkconsumedassets inhibits the upgrade as "outdated". Checked over the
+	# built tree so it covers what actually ships, generated files included.
+	grep -rl provided_data_streams $(LEAPP_BUILD_DIR)/files \
+		| xargs -r python3 tools/repomap_check.py
+
+	# A gpgkey= path is an unchecked string: nothing ties it to where the keys
+	# are actually installed, and a stale one only shows up as a curl error in
+	# the middle of a real upgrade.
+	find $(LEAPP_BUILD_DIR)/files -name '*.repo' -print0 \
+		| xargs -0 -r python3 tests/check_gpgkey_paths.py $(buildroot)
 
 	# todo: disabled temporary
 	# python3 tests/check_debranding.py $(buildroot)$(_sysconfdir)/leapp/files/pes-events.json

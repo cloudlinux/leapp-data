@@ -1,0 +1,173 @@
+# AlmaLinux repositories.
+# Taken from AlmaLinux's own el10 file - CloudLinux 10 takes its EL base content
+# from AlmaLinux 10, the same way CloudLinux 9 does from AlmaLinux 9.
+#
+# Note there is no almalinux10-resilientstorage: AlmaLinux dropped that repository
+# in 10, so unlike the el9 file this one has no counterpart for it.
+
+[almalinux10-baseos]
+name=AlmaLinux $releasever - BaseOS
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/$releasever/baseos
+# baseurl=https://repo.almalinux.org/almalinux/$releasever/BaseOS/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/distro/cloudlinux/rpm-gpg/10/RPM-GPG-KEY-AlmaLinux-10
+
+[almalinux10-appstream]
+name=AlmaLinux $releasever - AppStream
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/$releasever/appstream
+# baseurl=https://repo.almalinux.org/almalinux/$releasever/AppStream/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/distro/cloudlinux/rpm-gpg/10/RPM-GPG-KEY-AlmaLinux-10
+
+[almalinux10-crb]
+name=AlmaLinux $releasever - CRB
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/$releasever/crb
+# baseurl=https://repo.almalinux.org/almalinux/$releasever/CRB/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/distro/cloudlinux/rpm-gpg/10/RPM-GPG-KEY-AlmaLinux-10
+
+[almalinux10-highavailability]
+name=AlmaLinux $releasever - HighAvailability
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/$releasever/ha
+# baseurl=https://repo.almalinux.org/almalinux/$releasever/HighAvailability/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/distro/cloudlinux/rpm-gpg/10/RPM-GPG-KEY-AlmaLinux-10
+
+[almalinux10-extras]
+name=AlmaLinux $releasever - Extras
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/$releasever/extras
+# baseurl=https://repo.almalinux.org/almalinux/$releasever/extras/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/distro/cloudlinux/rpm-gpg/10/RPM-GPG-KEY-AlmaLinux-10
+
+[almalinux10-sap]
+name=AlmaLinux $releasever - SAP
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/$releasever/sap
+# baseurl=https://repo.almalinux.org/almalinux/$releasever/SAP/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/distro/cloudlinux/rpm-gpg/10/RPM-GPG-KEY-AlmaLinux-10
+
+[almalinux10-saphana]
+name=AlmaLinux $releasever - SAPHANA
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/$releasever/saphana
+# baseurl=https://repo.almalinux.org/almalinux/$releasever/SAPHANA/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/distro/cloudlinux/rpm-gpg/10/RPM-GPG-KEY-AlmaLinux-10
+
+[almalinux10-rt]
+name=AlmaLinux $releasever - RT
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/$releasever/rt?arch=x86_64
+# baseurl=https://repo.almalinux.org/almalinux/$releasever/RT/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/distro/cloudlinux/rpm-gpg/10/RPM-GPG-KEY-AlmaLinux-10
+
+[almalinux10-nfv]
+name=AlmaLinux $releasever - NFV
+mirrorlist=https://mirrors.almalinux.org/mirrorlist/$releasever/nfv?arch=x86_64
+# baseurl=https://repo.almalinux.org/almalinux/$releasever/NFV/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/leapp/repos.d/system_upgrade/common/files/distro/cloudlinux/rpm-gpg/10/RPM-GPG-KEY-AlmaLinux-10
+
+# CL repositories used during migration.
+# Enabled so CloudLinux-specific packages are available when the source system
+# is on the no-auth scheme and CLN is no longer serving them.
+
+# cloudlinux10-channel is the whole CloudLinux 10 package set. Unlike CloudLinux
+# 9 there is no BaseOS/AppStream split to fall back on - repo.cloudlinux.com
+# serves /cloudlinux/10/cloudlinux-x86_64-server-10/ and returns 404 for
+# /cloudlinux/10/BaseOS/ and /cloudlinux/10/AppStream/ - so this single channel
+# is the only source of CloudLinux content for the target.
+#
+# The repoid is deliberately "cloudlinux10-channel" rather than "cl-channel", so
+# it cannot clash with the source system's own cl-channel from
+# /etc/yum.repos.d/cl.repo, which is carried into the target upgrade container
+# and would otherwise trigger the "YUM/DNF repository defined multiple times"
+# inhibitor. Same reasoning as cloudlinux9-channel in the el9 file.
+#
+# The mirrorlist names the major version literally instead of using $releasever,
+# which is what the el9 file does. Minor-version routing is not populated for 10:
+# cl-mirrors/cloudlinux-x86_64-server-10.0 (and .1, .2) resolve to a mirror root
+# with no path at all, so a $releasever that expands to a minor version yields a
+# broken repository. Revisit once minor routing exists for 10.
+[cloudlinux10-channel]
+name=CloudLinux 10 - SWNG mirrorlist
+mirrorlist=https://repo.cloudlinux.com/cloudlinux/mirrorlists/cl-mirrors/cloudlinux-x86_64-server-10
+# baseurl=https://repo.cloudlinux.com/cloudlinux/10/cloudlinux-x86_64-server-10/$basearch/os/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
+
+# ALT-ELS repositories - where the Selector runtimes live on CloudLinux 10.
+#
+# On CloudLinux 9 alt-php, alt-python, alt-ruby and alt-nodejs come from the main
+# CloudLinux channel (`repoquery alt-php81` on a CL9 box answers cl-channel). On
+# CloudLinux 10 they moved to per-language ALT-ELS repositories, gated behind the
+# els-*-release packages that cldeploy installs on a fresh conversion
+# (install_alt_els_repositories, cloud-tools/cldeploy). Without them a CL9 -> CL10
+# upgrade leaves every alt-php package at its el9 build with no repository to
+# update from: the el10 ELS repo carries 12076 packages covering alt-php53 through
+# alt-php86, and none of it is reachable.
+#
+# They are declared here rather than in vendors.d because a vendor's repositories
+# are only used when that vendor is already active on the SOURCE, and on CL9 these
+# repositories do not exist - the packages come from cl-channel. The migration is
+# exactly cl-channel -> these, which repomap.json.el10 states.
+#
+# Authentication is the CLN JWT. rhn-client-tools symlinks /etc/dnf/vars/phpelstoken
+# and its three siblings to /etc/sysconfig/rhn/jwt.token (cl_post_jwt_update.py), so
+# all four variables are one token. An unregistered box has no token at all, which is
+# why every one of these carries skip_if_unavailable - a no-auth or IP-licensed system
+# must still upgrade, just without ELS content.
+#
+# Two URL shapes, deliberately copied from the els-*-release packages rather than
+# normalised: php puts the token in the basic-auth userinfo, the other three put it
+# in a path segment. Getting that wrong yields a 401 rather than an error that names
+# the cause.
+#
+# The repo ids carry an el10- prefix, as el10-alt-common and el10-epel already do,
+# because the els-*-release packages define php-els, alt-python, alt-ruby and
+# alt-nodejs in /etc/yum.repos.d. Reusing those ids makes leapp see the same
+# repository twice - once from the source system, once from this file - and inhibit
+# with "A YUM/DNF repository defined multiple times". That collision is certain
+# rather than hypothetical: the upgrade installs those very packages.
+
+[el10-php-els]
+name=CloudLinux ALT-ELS - PHP
+baseurl=https://$phpelstoken:@repo.alt.tuxcare.com/alt-php-els/rpm/el/10/stable/$basearch/
+enabled=1
+gpgcheck=1
+skip_if_unavailable=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
+
+[el10-alt-python]
+name=CloudLinux ALT-ELS - Python
+baseurl=https://repo.alt.tuxcare.com/alt-python-els/$altpythonelstoken/rpm/el/10/stable/$basearch/
+enabled=1
+gpgcheck=1
+skip_if_unavailable=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
+
+[el10-alt-ruby]
+name=CloudLinux ALT-ELS - Ruby
+baseurl=https://repo.alt.tuxcare.com/alt-ruby-els/$altrubyelstoken/rpm/el/10/stable/$basearch/
+enabled=1
+gpgcheck=1
+skip_if_unavailable=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
+
+[el10-alt-nodejs]
+name=CloudLinux ALT-ELS - NodeJS
+baseurl=https://repo.alt.tuxcare.com/alt-nodejs-els/$altnodejselstoken/rpm/el/10/stable/$basearch/
+enabled=1
+gpgcheck=1
+skip_if_unavailable=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux

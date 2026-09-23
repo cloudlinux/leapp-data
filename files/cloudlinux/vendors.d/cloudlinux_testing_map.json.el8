@@ -1,9 +1,10 @@
 {
     "datetime": "202204020934Z",
-    "version_format": "1.2.0",
+    "version_format": "1.3.0",
     "provided_data_streams": [
         "2.0",
-        "3.0"
+        "3.0",
+        "4.0"
     ],
     "mapping": [
         {
@@ -12,7 +13,9 @@
             "entries": [
                 {
                     "source": "cloudlinux-updates-testing",
-                    "target": ["cloudlinux8-updates-testing"]
+                    "target": [
+                        "cloudlinux8-updates-testing"
+                    ]
                 }
             ]
         }
@@ -26,7 +29,8 @@
                     "major_version": "7",
                     "repo_type": "rpm",
                     "arch": "x86_64",
-                    "channel": "beta"
+                    "channel": "beta",
+                    "distro": "cloudlinux"
                 }
             ]
         },
@@ -38,7 +42,8 @@
                     "major_version": "8",
                     "repo_type": "rpm",
                     "arch": "x86_64",
-                    "channel": "beta"
+                    "channel": "beta",
+                    "distro": "cloudlinux"
                 }
             ]
         }

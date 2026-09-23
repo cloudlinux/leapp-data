@@ -1,0 +1,52 @@
+{
+    "datetime": "202609180000Z",
+    "version_format": "1.3.0",
+    "mapping": [
+        {
+            "source_major_version": "9",
+            "target_major_version": "10",
+            "entries": [
+                {
+                    "source": "alt-common",
+                    "target": [
+                        "el10-alt-common"
+                    ]
+                }
+            ]
+        }
+    ],
+    "repositories": [
+        {
+            "pesid": "alt-common",
+            "entries": [
+                {
+                    "major_version": "9",
+                    "repoid": "alt-common",
+                    "arch": "x86_64",
+                    "channel": "ga",
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
+                }
+            ]
+        },
+        {
+            "pesid": "el10-alt-common",
+            "entries": [
+                {
+                    "major_version": "10",
+                    "repoid": "el10-alt-common",
+                    "arch": "x86_64",
+                    "channel": "ga",
+                    "repo_type": "rpm",
+                    "distro": "{distro}"
+                }
+            ]
+        }
+    ],
+    "provided_data_streams": [
+        "1.1",
+        "2.0",
+        "3.0",
+        "4.0"
+    ]
+}
