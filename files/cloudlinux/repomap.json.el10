@@ -67,11 +67,7 @@
                 {
                     "source": "cl-channel",
                     "target": [
-                        "cloudlinux10-channel",
-                        "el10-php-els",
-                        "el10-alt-python",
-                        "el10-alt-ruby",
-                        "el10-alt-nodejs"
+                        "cloudlinux10-channel"
                     ]
                 },
                 {
@@ -96,30 +92,6 @@
                     "source": "cloudlinux-elevate",
                     "target": [
                         "cloudlinux10-channel"
-                    ]
-                },
-                {
-                    "source": "php-els",
-                    "target": [
-                        "el10-php-els"
-                    ]
-                },
-                {
-                    "source": "alt-python",
-                    "target": [
-                        "el10-alt-python"
-                    ]
-                },
-                {
-                    "source": "alt-ruby",
-                    "target": [
-                        "el10-alt-ruby"
-                    ]
-                },
-                {
-                    "source": "alt-nodejs",
-                    "target": [
-                        "el10-alt-nodejs"
                     ]
                 }
             ]
@@ -434,58 +406,6 @@
                     "repo_type": "rpm",
                     "arch": "x86_64",
                     "channel": "ga",
-                    "distro": "cloudlinux"
-                }
-            ]
-        },
-        {
-            "pesid": "el10-php-els",
-            "entries": [
-                {
-                    "major_version": "10",
-                    "repoid": "el10-php-els",
-                    "arch": "x86_64",
-                    "channel": "ga",
-                    "repo_type": "rpm",
-                    "distro": "cloudlinux"
-                }
-            ]
-        },
-        {
-            "pesid": "el10-alt-python",
-            "entries": [
-                {
-                    "major_version": "10",
-                    "repoid": "el10-alt-python",
-                    "arch": "x86_64",
-                    "channel": "ga",
-                    "repo_type": "rpm",
-                    "distro": "cloudlinux"
-                }
-            ]
-        },
-        {
-            "pesid": "el10-alt-ruby",
-            "entries": [
-                {
-                    "major_version": "10",
-                    "repoid": "el10-alt-ruby",
-                    "arch": "x86_64",
-                    "channel": "ga",
-                    "repo_type": "rpm",
-                    "distro": "cloudlinux"
-                }
-            ]
-        },
-        {
-            "pesid": "el10-alt-nodejs",
-            "entries": [
-                {
-                    "major_version": "10",
-                    "repoid": "el10-alt-nodejs",
-                    "arch": "x86_64",
-                    "channel": "ga",
-                    "repo_type": "rpm",
                     "distro": "cloudlinux"
                 }
             ]

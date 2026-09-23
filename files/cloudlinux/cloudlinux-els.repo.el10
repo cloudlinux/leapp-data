@@ -1,0 +1,48 @@
+# ALT-ELS repositories - where the Selector runtimes live on CloudLinux 10.
+#
+# Deliberately NOT in leapp_upgrade_repositories.repo: scancustomrepofile emits a
+# CustomTargetRepository for every section of that file, unconditionally, so a
+# repository named there becomes a target repository whatever its enabled flag
+# says and whatever the repomap does. These authenticate with the CLN JWT, and on
+# a box without one the baseurl keeps $phpelstoken unexpanded, the repository
+# answers 403, and the target userspace build fails on the metadata download.
+#
+# So this file is pulled in by copy_els_auth_to_target_userspace, which emits a
+# CustomTargetRepositoryFile for it only when /etc/sysconfig/rhn/jwt.token exists.
+# An unregistered box never sees these repositories at all.
+#
+# Two URL shapes, copied verbatim from the els-*-release packages rather than
+# normalised: php puts the token in the basic-auth userinfo, the other three in a
+# path segment. Getting that wrong yields a 401 rather than an error naming the cause.
+
+[el10-php-els]
+name=CloudLinux ALT-ELS - PHP
+baseurl=https://$phpelstoken:@repo.alt.tuxcare.com/alt-php-els/rpm/el/10/stable/$basearch/
+enabled=1
+gpgcheck=1
+skip_if_unavailable=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
+
+[el10-alt-python]
+name=CloudLinux ALT-ELS - Python
+baseurl=https://repo.alt.tuxcare.com/alt-python-els/$altpythonelstoken/rpm/el/10/stable/$basearch/
+enabled=1
+gpgcheck=1
+skip_if_unavailable=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
+
+[el10-alt-ruby]
+name=CloudLinux ALT-ELS - Ruby
+baseurl=https://repo.alt.tuxcare.com/alt-ruby-els/$altrubyelstoken/rpm/el/10/stable/$basearch/
+enabled=1
+gpgcheck=1
+skip_if_unavailable=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux
+
+[el10-alt-nodejs]
+name=CloudLinux ALT-ELS - NodeJS
+baseurl=https://repo.alt.tuxcare.com/alt-nodejs-els/$altnodejselstoken/rpm/el/10/stable/$basearch/
+enabled=1
+gpgcheck=1
+skip_if_unavailable=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CloudLinux

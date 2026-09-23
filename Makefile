@@ -32,6 +32,13 @@ core:
 	cp -arf files/$(DIST_NAME)/* $(buildroot)$(_sysconfdir)/leapp/files/
 
 	install -D files/$(DIST_NAME)/leapp_upgrade_repositories.repo.el${DIST_TARGET_VERSION} $(LEAPP_BUILD_DIR)/files/leapp_upgrade_repositories.repo
+	# Optional per-target repofiles that are NOT auto-scanned: scancustomrepofile
+	# turns every section of leapp_upgrade_repositories.repo into a target
+	# repository unconditionally, which is wrong for repositories that need
+	# credentials. An actor pulls these in instead, when it has the credentials.
+	if [ -f files/$(DIST_NAME)/cloudlinux-els.repo.el${DIST_TARGET_VERSION} ]; then \
+		install -D files/$(DIST_NAME)/cloudlinux-els.repo.el${DIST_TARGET_VERSION} $(LEAPP_BUILD_DIR)/files/cloudlinux-els.repo; \
+	fi
 	install -D files/$(DIST_NAME)/repomap.json.el${DIST_TARGET_VERSION} $(LEAPP_BUILD_DIR)/files/repomap.json
 
 	# leapp reads exactly one unconditional PES file, so upstream's events and ours
