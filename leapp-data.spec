@@ -67,6 +67,13 @@ make install PREFIX=%{buildroot}
 - Advertise data stream 4.0 on every asset, which leapp-repository 0.24.0 consumes; without it the upgrade is inhibited as "outdated Leapp data assets"
 - Fix the CloudLinux 7 to 8 map targeting almalinux8-ha, a repository no target repository file defines, leaving HighAvailability content unreachable
 - Build vendors with no data for the target version are skipped rather than installed from files that do not exist
+- CLOS-7051: Declare the ALT-ELS repositories for the CloudLinux 10 target and map cl-channel onto them; the PHP, Python, Ruby and NodeJS Selectors moved there from the main CloudLinux channel, and without them an upgrade leaves every alt-php package at its el9 build with nothing to update it from
+- CLOS-7051: Map the ALT-ELS repositories on the source side too, for machines whose cloudlinux-release already pulled alt-common-release
+- CLOS-7051: Suppress seven AlmaLinux package removals that CloudLinux 10 still ships and still needs - libnsl2, libwmf-lite, LibRaw, libdb, libdb-utils, enchant and libmemcached-awesome. Removing them made the el10 builds of packages that link against them uninstallable, and with allow_erasing the upgrade silently erased lve-utils, cagefs, lvemanager and lve-stats while reporting success
+- CLOS-7051: Add tools/removal_audit.py, which reports upstream removals the target still ships and a CloudLinux package still requires, so these are found before an upgrade rather than after one
+- CLOS-7051: Ship the EPEL 10 signing key; vendor keys install per target version and there was no el10 source, so the target shipped no EPEL key at all
+- Point the el9 and el10 target repository files at the GPG keys' per-distro location, which leapp-repository 0.24.0 moved; the el9 file means this also affected CloudLinux 8 to 9
+- Check every gpgkey= in every built repository file against the build tree, so a key that moves without its references fails the build instead of a customer's upgrade
 
 * Sun May 17 2026 Roman Prilipskii <rprilipskii@cloudlinux.com> - 0.3-9.cloudlinux
 - CLOS-4056: Add CloudLinux SWNG repository entries to el8/el9 leapp upgrade and repomap data
