@@ -80,6 +80,7 @@ make install PREFIX=%{buildroot}
 - CLOS-7051: Ship the EPEL 10 signing key; vendor keys install per target version and there was no el10 source, so the target shipped no EPEL key at all
 - Point the el9 and el10 target repository files at the GPG keys' per-distro location, which leapp-repository 0.24.0 moved; the el9 file means this also affected CloudLinux 8 to 9
 - Check every gpgkey= in every built repository file against the build tree, so a key that moves without its references fails the build instead of a customer's upgrade
+- CLOS-4690: Recognise the repositories of servers that install from their own mirror of the CloudLinux and AlmaLinux repositories, matching each to the CloudLinux 9 target repository that leapp-repository derives from the server's own repository files
 
 * Sun May 17 2026 Roman Prilipskii <rprilipskii@cloudlinux.com> - 0.3-9.cloudlinux
 - CLOS-4056: Add CloudLinux SWNG repository entries to el8/el9 leapp upgrade and repomap data
