@@ -6,3 +6,5 @@ build/
 # Generated at build time by tools/compose_pes.py from the layers beside it.
 # Only CloudLinux is layered; the other distros' files are tracked as-is.
 files/cloudlinux/pes-events.json
+__pycache__/
+*.pyc
