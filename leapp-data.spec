@@ -36,7 +36,11 @@ Conflicts: %{conflict_dists}
 %setup -q
 
 %build
-make DIST_VERSION=%{?rhel} all && make test
+# One command per line: rpm runs %build under sh -e, and a failing command that
+# is not the last of an && list does not stop it - el7 then built and shipped the
+# package with the failure. tools/tests/test_rebuild_ids.py guards it.
+make DIST_VERSION=%{?rhel} all
+make test
 
 %install
 make install PREFIX=%{buildroot}
@@ -60,7 +64,7 @@ make install PREFIX=%{buildroot}
 
 %changelog
 
-* Thu Sep 18 2026 Roman Prilipskii <rprilipskii@cloudlinux.com> - 0.3-10.cloudlinux
+* Fri Sep 18 2026 Roman Prilipskii <rprilipskii@cloudlinux.com> - 0.3-10.cloudlinux
 - CLOS-7051: Add CloudLinux 9 to CloudLinux 10 upgrade data - repository map, target repositories and the AlmaLinux 10 signing key
 - CLOS-7051: Rebase PES data on AlmaLinux's, which brings CloudLinux 9 to 10 package events from 193 to 2428 and picks up two years of corrections to the 7 to 8 and 8 to 9 data
 - Move repository mapping data to format 1.3.0, required by leapp-repository 0.24.0, which adds a mandatory 'distro' field to every repository entry

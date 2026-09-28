@@ -2,7 +2,7 @@
 This script is used to rebuild the IDs in PES JSON files. It loads JSON files from specified directories,
 reassigns the IDs starting from 1, and saves the modified JSON files back to disk.
 
-The script defines a `JSONFile` dataclass to represent a JSON file with its path and data.
+The script defines a `JSONFile` class to represent a JSON file with its path and data.
 It also defines a `PesIdRebuilder` class that handles the loading, rebuilding, and saving of JSON files.
 
 Why do we need to rebuild the IDs?
@@ -20,12 +20,14 @@ Note: This script assumes that the PES front file is the first JSON file in the 
 
 import json
 import os
-from dataclasses import dataclass
 
-@dataclass
+
 class JSONFile:
-    path: str
-    data: dict
+    # A plain class, not a dataclass: the build runs this under the python3 of
+    # the el7 and el8 build roots, which is 3.6 and has no dataclasses module.
+    def __init__(self, path, data):
+        self.path = path
+        self.data = data
 
 
 def load_json(file_path: str):
