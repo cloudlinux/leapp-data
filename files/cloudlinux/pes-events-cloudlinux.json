@@ -68,6 +68,33 @@
                 "libmemcached-awesome"
             ],
             "reason": "gearmand requires it, and it ships for el10 in AlmaLinux AppStream."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "LibRaw-devel"
+            ],
+            "reason": "LibRaw-static and alt-ImageMagick-static-devel require it, and LibRaw-devel-0.21.3-1.el10_0 ships in EPEL 10 beside the LibRaw kept above. Removing it keeps the library but erases its headers, and under allow_erasing both dependents go with it, silently."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "libdb-devel"
+            ],
+            "reason": "libdb-devel-static requires it, and libdb-devel-5.3.28-64.el10_0 ships in EPEL 10. libdb itself is kept above; removing only its headers would erase the static library with them, silently."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "libwmf-devel"
+            ],
+            "reason": "alt-ImageMagick-static-devel requires it, and libwmf-devel-0.2.13-6.el10_0 ships in EPEL 10 beside the libwmf-lite kept above. Removing it would erase that CloudLinux package with it, silently."
         }
     ],
     "packageinfo": [
