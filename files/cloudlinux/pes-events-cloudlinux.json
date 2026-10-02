@@ -95,6 +95,213 @@
                 "libwmf-devel"
             ],
             "reason": "alt-ImageMagick-static-devel requires it, and libwmf-devel-0.2.13-6.el10_0 ships in EPEL 10 beside the libwmf-lite kept above. Removing it would erase that CloudLinux package with it, silently."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "double-conversion"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships double-conversion-3.3.0-4.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "double-conversion-devel"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships double-conversion-devel-3.3.0-4.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "enchant-devel"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships enchant-devel-1.6.0-39.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. It sits beside the enchant kept above. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "libdb-cxx"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships libdb-cxx-5.3.28-61.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. It sits beside the libdb kept above. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "libdb-cxx-devel"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships libdb-cxx-devel-5.3.28-61.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. It sits beside the libdb kept above. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "libdb-devel-doc"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships libdb-devel-doc-5.3.28-61.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. It sits beside the libdb kept above. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "libdb-sql"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships libdb-sql-5.3.28-61.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. It sits beside the libdb kept above. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "libdb-sql-devel"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships libdb-sql-devel-5.3.28-61.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. It sits beside the libdb kept above. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "libmemcached-awesome-devel"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships libmemcached-awesome-devel-1.1.4-5.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. It sits beside the libmemcached-awesome kept above. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "libmemcached-awesome-tools"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships libmemcached-awesome-tools-1.1.4-5.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. It sits beside the libmemcached-awesome kept above. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "libwmf"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships libwmf-0.2.13-6.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. It sits beside the libwmf-lite kept above. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "qt5-qtbase"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships qt5-qtbase-5.15.17-1.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. The qt5 and qt5-devel metapackages stay removed: they require qt5 modules that nothing but EPEL ships for el10. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "qt5-qtbase-common"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships qt5-qtbase-common-5.15.17-1.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. The qt5 and qt5-devel metapackages stay removed: they require qt5 modules that nothing but EPEL ships for el10. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "qt5-qtbase-devel"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships qt5-qtbase-devel-5.15.17-1.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. The qt5 and qt5-devel metapackages stay removed: they require qt5 modules that nothing but EPEL ships for el10. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "qt5-qtbase-examples"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships qt5-qtbase-examples-5.15.17-1.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. The qt5 and qt5-devel metapackages stay removed: they require qt5 modules that nothing but EPEL ships for el10. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "qt5-qtbase-gui"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships qt5-qtbase-gui-5.15.17-1.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. The qt5 and qt5-devel metapackages stay removed: they require qt5 modules that nothing but EPEL ships for el10. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "qt5-qtbase-mysql"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships qt5-qtbase-mysql-5.15.17-1.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. The qt5 and qt5-devel metapackages stay removed: they require qt5 modules that nothing but EPEL ships for el10. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "qt5-qtbase-odbc"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships qt5-qtbase-odbc-5.15.17-1.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. The qt5 and qt5-devel metapackages stay removed: they require qt5 modules that nothing but EPEL ships for el10. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "qt5-qtbase-postgresql"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships qt5-qtbase-postgresql-5.15.17-1.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. The qt5 and qt5-devel metapackages stay removed: they require qt5 modules that nothing but EPEL ships for el10. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "qt5-qtbase-private-devel"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships qt5-qtbase-private-devel-5.15.17-1.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. The qt5 and qt5-devel metapackages stay removed: they require qt5 modules that nothing but EPEL ships for el10. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "qt5-qtbase-static"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships qt5-qtbase-static-5.15.17-1.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. The qt5 and qt5-devel metapackages stay removed: they require qt5 modules that nothing but EPEL ships for el10. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "qt5-rpm-macros"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships qt5-rpm-macros-5.15.17-1.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. The qt5 and qt5-devel metapackages stay removed: they require qt5 modules that nothing but EPEL ships for el10. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 9,
+            "to_major": 10,
+            "in_packages": [
+                "qt5-srpm-macros"
+            ],
+            "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships qt5-srpm-macros-5.15.17-1.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. The qt5 and qt5-devel metapackages stay removed: they require qt5 modules that nothing but EPEL ships for el10. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
         }
     ],
     "packageinfo": [
