@@ -302,6 +302,51 @@
                 "qt5-srpm-macros"
             ],
             "reason": "Removed upstream on 9 -> 10 and absent from AlmaLinux 10, but TuxCare's el10-alt-common ships qt5-srpm-macros-5.15.17-1.el10, EPEL 10 ships it too, and it installs against AlmaLinux 10 and alt-common alone. The qt5 and qt5-devel metapackages stay removed: they require qt5 modules that nothing but EPEL ships for el10. Upstream's removal would erase it from every box that has it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 8,
+            "to_major": 9,
+            "in_packages": [
+                "libunwind"
+            ],
+            "reason": "AlmaLinux 9 ships no libunwind, but the CloudLinux 9 channel, alt-common el9 and Imunify360's el9 repository ship libunwind-1.6.2-1.el9, and Imunify360's imunify360-php-i360 requires it on el8 and el9. CloudLinux 8 to 9 QA lost imunify360-php-i360, -php-daemon, -firewall and -ossec through this removal. The rebase onto AlmaLinux's PES added this removal; leapp-data 0.3-9 did not remove it. Removing it would erase it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 8,
+            "to_major": 9,
+            "in_packages": [
+                "libidn"
+            ],
+            "reason": "AlmaLinux 9 ships no libidn, but the CloudLinux 9 channel and alt-common el9 ship libidn-1.38-4.el9, which installs there. The rebase onto AlmaLinux's PES added this removal; leapp-data 0.3-9 did not remove it. Removing it would erase it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 8,
+            "to_major": 9,
+            "in_packages": [
+                "python3-pyOpenSSL"
+            ],
+            "reason": "AlmaLinux 9 ships no python3-pyOpenSSL, but the CloudLinux 9 channel ships python3-pyOpenSSL-21.0.0-1.el9, which installs there. The rebase onto AlmaLinux's PES added this removal; leapp-data 0.3-9 did not remove it. Removing it would erase it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 8,
+            "to_major": 9,
+            "in_packages": [
+                "recode-devel"
+            ],
+            "reason": "AlmaLinux 9 ships no recode-devel, but the CloudLinux 9 channel and alt-common el9 ship recode-devel-3.7.11-1.el9, which installs there. The rebase onto AlmaLinux's PES added this removal; leapp-data 0.3-9 did not remove it. Removing it would erase it, and under allow_erasing whatever requires it, when the target can upgrade it."
+        },
+        {
+            "action": 1,
+            "from_major": 8,
+            "to_major": 9,
+            "in_packages": [
+                "dnf-plugin-spacewalk"
+            ],
+            "reason": "Upstream removes the satellite-5-client:1.0 module build, but CloudLinux 9 has no modules and its channel ships dnf-plugin-spacewalk-2.8.5-12.el9, the CLN client plugin, which installs there. The rebase onto AlmaLinux's PES added this removal; leapp-data 0.3-9 did not remove it. Removing it would erase it, and under allow_erasing whatever requires it, when the target can upgrade it."
         }
     ],
     "packageinfo": [
