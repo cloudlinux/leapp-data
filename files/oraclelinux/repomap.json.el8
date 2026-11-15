@@ -1,8 +1,9 @@
 {
     "datetime": "202204020934Z",
-    "version_format": "1.2.0",
+    "version_format": "1.3.0",
     "provided_data_streams": [
-        "3.0"
+        "3.0",
+        "4.0"
     ],
     "mapping": [
         {
@@ -47,14 +48,16 @@
                     "major_version": "7",
                     "channel": "ga",
                     "arch": "x86_64",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "oraclelinux"
                 },
                 {
                     "arch": "aarch64",
                     "repoid": "base",
                     "major_version": "7",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "oraclelinux"
                 }
             ]
         },
@@ -66,14 +69,16 @@
                     "repoid": "ol8_baseos_latest",
                     "channel": "ga",
                     "major_version": "8",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "oraclelinux"
                 },
                 {
                     "repoid": "ol8_baseos_latest",
                     "channel": "ga",
                     "arch": "x86_64",
                     "major_version": "8",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "oraclelinux"
                 }
             ]
         },
@@ -85,14 +90,16 @@
                     "channel": "ga",
                     "repoid": "ol8_appstream",
                     "major_version": "8",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "oraclelinux"
                 },
                 {
                     "channel": "ga",
                     "repoid": "ol8_appstream",
                     "arch": "x86_64",
                     "major_version": "8",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "oraclelinux"
                 }
             ]
         },
@@ -104,14 +111,16 @@
                     "repoid": "ol8_codeready_builder",
                     "channel": "ga",
                     "major_version": "8",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "oraclelinux"
                 },
                 {
                     "repoid": "ol8_codeready_builder",
                     "channel": "ga",
                     "arch": "x86_64",
                     "major_version": "8",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "oraclelinux"
                 }
             ]
         },
@@ -123,14 +132,16 @@
                     "channel": "ga",
                     "arch": "x86_64",
                     "major_version": "8",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "oraclelinux"
                 },
                 {
                     "arch": "aarch64",
                     "repoid": "ol8_addons",
                     "channel": "ga",
                     "major_version": "8",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "oraclelinux"
                 }
             ]
         },
@@ -142,14 +153,16 @@
                     "repoid": "ol8_UEKR6",
                     "arch": "x86_64",
                     "major_version": "8",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "oraclelinux"
                 },
                 {
                     "arch": "aarch64",
                     "channel": "ga",
                     "repoid": "ol8_baseos",
                     "major_version": "8",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "oraclelinux"
                 }
             ]
         },
@@ -161,14 +174,16 @@
                     "channel": "ga",
                     "repoid": "updates",
                     "arch": "x86_64",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "oraclelinux"
                 },
                 {
                     "arch": "aarch64",
                     "major_version": "7",
                     "channel": "ga",
                     "repoid": "updates",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "oraclelinux"
                 }
             ]
         },
@@ -180,14 +195,16 @@
                     "major_version": "7",
                     "repoid": "extras",
                     "channel": "ga",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "oraclelinux"
                 },
                 {
                     "major_version": "7",
                     "repoid": "extras",
                     "channel": "ga",
                     "arch": "x86_64",
-                    "repo_type": "rpm"
+                    "repo_type": "rpm",
+                    "distro": "oraclelinux"
                 }
             ]
         }

@@ -1,8 +1,9 @@
 {
     "datetime": "202204020934Z",
-    "version_format": "1.2.0",
+    "version_format": "1.3.0",
     "provided_data_streams": [
-        "3.0"
+        "3.0",
+        "4.0"
     ],
     "mapping": [
         {
@@ -49,7 +50,8 @@
                     "arch": "x86_64",
                     "major_version": "7",
                     "repoid": "base",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "centos"
                 }
             ]
         },
@@ -61,7 +63,8 @@
                     "repoid": "centos8-baseos",
                     "major_version": "8",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "centos"
                 }
             ]
         },
@@ -73,7 +76,8 @@
                     "major_version": "8",
                     "arch": "x86_64",
                     "repoid": "centos8-appstream",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "centos"
                 }
             ]
         },
@@ -85,7 +89,8 @@
                     "repo_type": "rpm",
                     "major_version": "8",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "centos"
                 }
             ]
         },
@@ -97,7 +102,8 @@
                     "major_version": "8",
                     "arch": "x86_64",
                     "repoid": "centos8-ha",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "centos"
                 }
             ]
         },
@@ -109,7 +115,8 @@
                     "arch": "x86_64",
                     "major_version": "7",
                     "repoid": "updates",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "centos"
                 }
             ]
         },
@@ -121,7 +128,8 @@
                     "repoid": "extras",
                     "arch": "x86_64",
                     "major_version": "7",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "centos"
                 }
             ]
         },
@@ -133,7 +141,8 @@
                     "repoid": "centos8-extras",
                     "major_version": "8",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "centos"
                 }
             ]
         },
@@ -145,7 +154,8 @@
                     "repoid": "centos8-rt",
                     "major_version": "8",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "centos"
                 }
             ]
         },
@@ -157,7 +167,8 @@
                     "repoid": "centos8-nfv",
                     "major_version": "8",
                     "arch": "x86_64",
-                    "channel": "ga"
+                    "channel": "ga",
+                    "distro": "centos"
                 }
             ]
         }

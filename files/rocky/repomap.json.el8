@@ -1,8 +1,9 @@
 {
     "datetime": "202204020934Z",
-    "version_format": "1.2.0",
+    "version_format": "1.3.0",
     "provided_data_streams": [
-        "3.0"
+        "3.0",
+        "4.0"
     ],
     "mapping": [
         {
@@ -49,7 +50,8 @@
                     "repoid": "base",
                     "major_version": "7",
                     "repo_type": "rpm",
-                    "arch": "x86_64"
+                    "arch": "x86_64",
+                    "distro": "rocky"
                 }
             ]
         },
@@ -61,7 +63,8 @@
                     "repoid": "rocky8-baseos",
                     "major_version": "8",
                     "repo_type": "rpm",
-                    "arch": "x86_64"
+                    "arch": "x86_64",
+                    "distro": "rocky"
                 }
             ]
         },
@@ -73,7 +76,8 @@
                     "major_version": "8",
                     "repo_type": "rpm",
                     "repoid": "rocky8-appstream",
-                    "arch": "x86_64"
+                    "arch": "x86_64",
+                    "distro": "rocky"
                 }
             ]
         },
@@ -85,7 +89,8 @@
                     "major_version": "8",
                     "repo_type": "rpm",
                     "repoid": "rocky8-powertools",
-                    "arch": "x86_64"
+                    "arch": "x86_64",
+                    "distro": "rocky"
                 }
             ]
         },
@@ -97,7 +102,8 @@
                     "channel": "ga",
                     "major_version": "8",
                     "repo_type": "rpm",
-                    "arch": "x86_64"
+                    "arch": "x86_64",
+                    "distro": "rocky"
                 }
             ]
         },
@@ -109,7 +115,8 @@
                     "major_version": "8",
                     "repo_type": "rpm",
                     "repoid": "rocky8-resilient-storage",
-                    "arch": "x86_64"
+                    "arch": "x86_64",
+                    "distro": "rocky"
                 }
             ]
         },
@@ -121,7 +128,8 @@
                     "major_version": "7",
                     "repo_type": "rpm",
                     "repoid": "updates",
-                    "arch": "x86_64"
+                    "arch": "x86_64",
+                    "distro": "rocky"
                 }
             ]
         },
@@ -133,7 +141,8 @@
                     "repoid": "extras",
                     "major_version": "7",
                     "repo_type": "rpm",
-                    "arch": "x86_64"
+                    "arch": "x86_64",
+                    "distro": "rocky"
                 }
             ]
         },
@@ -145,7 +154,8 @@
                     "major_version": "8",
                     "repo_type": "rpm",
                     "arch": "x86_64",
-                    "repoid": "rocky8-extras"
+                    "repoid": "rocky8-extras",
+                    "distro": "rocky"
                 }
             ]
         },
@@ -157,7 +167,8 @@
                     "major_version": "8",
                     "repo_type": "rpm",
                     "arch": "x86_64",
-                    "repoid": "rocky8-rt"
+                    "repoid": "rocky8-rt",
+                    "distro": "rocky"
                 }
             ]
         },
@@ -169,7 +180,8 @@
                     "major_version": "8",
                     "repo_type": "rpm",
                     "arch": "x86_64",
-                    "repoid": "rocky8-nfv"
+                    "repoid": "rocky8-nfv",
+                    "distro": "rocky"
                 }
             ]
         }
